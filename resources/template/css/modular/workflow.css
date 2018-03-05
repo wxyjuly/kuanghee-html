@@ -1,0 +1,180 @@
+/**工作流**/
+.workflow-rt{float:left;padding:10px 0;width:100%;background:#fff;}
+.workflow-tt{padding-left:16px;width:100%;height:42px;font-size:16px;color:#333;line-height:42px;border-bottom:1px solid #e8e8e8;}
+.workflow-sch{float:left;padding:0 15px;margin-top:18px;width:100%;}
+.workflow-sch ul{float:left;width:100%;}
+.workflow-sch ul li{float:left;}
+.workflow-sch ul li p{padding:0;margin-right:8px;float:left;}
+.int-medium{padding:0 4px;width:180px;height:30px;border:1px solid #e8e8e8;background:#fff;line-height:30px;font-size:14px;color:#333}
+.int-medium:hover{border:1px solid #00ce6d}
+.workflow-sch ul li .sch a{float:left;width:50px;height:30px;background:#00ce6d;text-align:center;line-height:30px;}
+.workflow-sch ul li .sch a i{color:#fff;font-size:14px;}
+.workflow-sch ul .rt{float:right}
+.workflow-sch ul .rt a{float:left;padding:0 10px;width:auto;height:30px;background:#00ce6d;line-height:30px;text-align:center;font-size:14px;color:#fff}
+.workflow-lst{float:left;margin-top:14px;padding:0 15px;width:100%;}
+.pl-10{padding-left:10px;}
+.workflow-lst .wk-table tr td a{margin-left:10px;}
+.workflow-lst .wk-table tr td a i{color:#666;font-size:12px;}
+.workflow-lst .wk-table tr td a i:hover{color:#00ce6d}
+
+
+.wk-table tr td  a i{color:#666;font-size:14px;}
+/**分页**/
+.pr-15{padding-right:15px;}
+.m-pag{float:left;width:100%;text-align:right;}
+.paging{margin:15px 0px 15px 15px;}
+.paging ul{display:inline-block;vertical-align:middle;border-left:1px solid #e8e8e8}
+.paging ul li{display:inline;}
+.paging ul li a{width:18px; height:18px;border:1px solid #e8e8e8;border-left:none; float:left;text-align:center;color:#999;font-size:12px;}
+.paging ul li a:hover{ background:#f9f9f9; color:#666;/*border:1px solid #1cbbe6;*/}
+.paging ul .active a{background:#f9f9f9; color:#666;/*border:1px solid #1cbbe6;*/}
+
+.paging-large ul li{line-height:32px;}
+.paging-large ul li a{width:34px;height:32px;line-height:32px;font-size:14px;}
+.paging ul .prev-up a{width:55px;}
+.paging ul .next-down a{width:55px;}
+.paging ul li span{ float:left; margin-left:5px;}
+
+/**弹窗**/
+.eject-file{position:absolute;left:50%;top:50%;margin-left:-245px;margin-top:-195px;z-index:299;float:left;width:490px;height:190px;background:#fff;display:none;}
+.mask{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;opacity:0.4;filter:alpha(opacity=40);z-index:199;display:none;}
+.tips-tt{float:left;padding:0 10px;width:100%;height:40px;border-bottom:1px solid #e8e8e8;}
+.tips-tt p{float:left;line-height:40px;}
+.tips-tt .right{float:right}
+.tips-tt .right i{font-size:16px;color:#666}
+.tips-lst{float:left;padding:34px 0 0 70px;width:100%;}
+.tips-lst ul{float:left;width:100%;}
+.tips-lst ul li{float:left;width:100%;line-height:30px;}
+.tips-lst ul li p{position:relative;float:left;margin-right:10px;}
+.tips-lst ul li p span{float:left;margin-right:10px;width:76px;height:30px;border:1px solid #e8e8e8;text-align:center;line-height:30px;}
+.tips-lst ul li p label{color:#f7462e}
+.tips-lst ul .bd{margin-top:7px;}
+.tips-lst ul .bd p{padding-left:70px;width:100%;line-height:20px;}
+.tip-file{position:absolute;left:0;top:0;width:76px;height:30px;opacity:0;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;cursor:pointer;}
+
+.workflow-lst .wk-table .fc-co td{color:#999}
+.wk-table .fc-co:hover{background:#fff;}
+.workflow-lst .wk-table .fc-co td a i{color:#999}
+.workflow-lst .wk-table .fc-co td a i:hover{color:#999}
+
+
+/**审批**/
+.m-dot-right-title{float:left;padding-left:15px;width:100%;height:40px;border-bottom:1px solid #e8e8e8;font-size:12px;}
+.m-dot-right-title p{float:left;margin-top:10px;padding-left:10px;height:18px;border-left:4px  solid #00ce6d;cursor:pointer;}
+.m-dot-right-title .right{float:right;margin-right:10px;border-left:none;cursor:pointer;}
+.m-dot-dist{float:left;margin-top:10px;padding:5px 15px 8px 15px;width:100%;}
+.m-dt-list{float:left;width:100%;}
+.m-dt-list ul{float:left;width:100%;margin-bottom:15px;}
+.m-dt-list ul li{float:left;padding-left:60px;width:50%;}
+.m-dt-list ul li p{float:left;color:#666}
+.m-dt-list ul li .word{width:110px;color:#999;}
+.m-sp span{float:left;margin:10px 0 10px 20px;padding-left:10px;height:18px;border-left:4px solid #00ce6d;}
+.m-dt-list ul .m-xlag{width:100%;margin-left:0;}
+
+
+
+/**步骤**/
+.workflow-step-big{width:100%;float:left;border-bottom:1px solid #e8e8e8;margin:16px 0 0 0;}
+.workflow-step{width:500px;margin:0 auto;}
+.workflow-step-none{position:relative;width:220px;float:left;}
+.workflow-step-none ul{width:50px;float:left;}
+.pl-140{padding:0 0 0 140px;}
+.workflow-step-big.pl20{padding:0 0 0 50px;}
+.workflow-step-big.pl10{padding:0 0 0 25px;}
+.workflow-sml-xwh{width:170px;}
+.workflow-x-sml-xwh{width:120px;}
+.workflow-sex-sml-xwh{width:135px;}
+/**通过的步骤**/
+.workflow-adopt-green-border ul .circle{width:50px;height:50px;ackground:#fff;border:1px solid #39d5b0;border-radius:50%;text-align:center;line-height:50px;}
+.workflow-adopt-green-border ul .circle i{font-size:24px;color:#39d5b0}
+.workflow-adopt-green-border ul .word{line-height:40px;color:#39d5b0}
+.workflow-adopt-green-border ul .prs-wd{position:absolute;left:-25px;line-height:40px;width:100px;color:#39d5b0;}
+.workflow-adopt-green-border ul .prs-wd1{position:absolute;left:-30px;line-height:40px;width:100px;color:#39d5b0;}
+.workflow-adopt-green-border .green-line{width:170px;float:left;border-bottom:1px solid #39d5b0;margin-top:30px;}
+.workflow-adopt-green-border .s-line{width:120px;}
+.workflow-adopt-green-border .x-s-line{width:70px;}
+.workflow-adopt-green-border .sex-s-line{width:85px;}
+/**正进行的步骤**/
+.workflow-adopt-green-bj ul .circle{width:50px;height:50px;background:#39d5b0;border:1px solid #39d5b0;border-radius:50%;text-align:center;line-height:50px;}
+.workflow-adopt-green-bj ul .circle i{font-size:24px;color:#fff}
+.workflow-adopt-green-bj ul .word{text-align:center;line-height:40px;color:#39d5b0;font-weight:bold;}
+.workflow-adopt-green-bj ul .prs-wd{position:absolute;left:-25px;line-height:40px;color:#39d5b0;}
+
+.workflow-adopt-green-bj .green-line{width:168px;float:left;border-bottom:1px solid #39d5b0;margin-top:30px;}
+.workflow-adopt-green-bj .ash-line{width:168px;float:left;border-bottom:1px solid #e3e6ed;margin-top:30px;}
+.workflow-adopt-green-bj .s-line{width:120px;}
+.workflow-adopt-green-bj .x-s-line{width:70px;}
+.workflow-adopt-green-bj .sex-s-line{width:85px;}
+/**没通过的步骤**/
+.workflow-adopt-ash-border ul .circle{width:50px;height:50px;background:#fff;border:1px solid #e3e6ed;border-radius:50%;text-align:center;line-height:50px;}
+.workflow-adopt-ash-border ul .circle i{font-size:24px;color:#e3e6ed}
+.workflow-adopt-ash-border ul .word{text-align:center;line-height:30px;color:#e3e6ed;}
+.workflow-adopt-ash-border ul .prs-wd{position:absolute;left:-25px;line-height:40px;color:#39d5b0;}
+.workflow-adopt-ash-border .green-line{width:168px;float:left;border-bottom:1px solid #e3e6ed;margin-top:30px;}
+.workflow-adopt-ash-border .s-line{width:120px;}
+.workflow-adopt-ash-border .x-s-line{width:70px;}
+.workflow-adopt-ash-border .sex-s-line{width:85px;}
+.workflow-step-small{width:50px;float:left}
+
+.workflow-m-trk-sch{position:relative;float:left;padding-top:5px;/*margin-bottom:10px;*/width:100%;background:#fff;}
+.workflow-m-trk-tt{position:relative;padding:0 0 5px;padding:0 15px;float:left;width:100%;border-bottom:1px solid #e8e8e8;}
+.workflow-m-trk-tt p{float:left;font-size:16px;color:#333;line-height:25px;}
+.workflow-m-trk-tt .title{line-height:30px;}
+.workflow-m-starsh-tt .line,.workflow-m-trk-tt .line{float:left;margin:6px 6px 0 0;width:4px;height:18px;background:#00ce6d;border-radius:1px;}
+.workflow-m-vis-fm{float:left;width:100%;}
+.workflow-m-vis-fm ul{position:relative;float:left;margin:5px 0 0;width:100%;}
+.workflow-m-vis-fm ul li{float:left;margin-right:6px;line-height:32px;}
+.workflow-m-vis-fm ul .bt{margin-right:10px;width:120px;text-align:right;}
+.workflow-m-vis-fm ul li p{float:left}
+.workflow-m-vis-fm ul .bd{float:left;/*padding-left:87px;*/width:280px;height:34px;border:1px solid #e8e8e8}
+.workflow-m-vis-fm ul .bd:hover{border:1px solid #32c37d}
+.workflow-m-vis-fm ul .bd i{font-size:16px;color:#666}
+.workflow-m-vis-fm ul .red{color:#f00}
+.bdnone{border-bottom:none;}
+.workflow-m-vis-fm ul .lst{width:500px;}
+.workflow-m-vis-fm ul .lst p{float:left;margin-right:10px;cursor:pointer}
+.workflow-m-vis-fm ul .lst p i{margin-right:4px;font-size:14px;color:#999}
+.workflow-m-vis-fm ul .lst .z-crt i{color:#01ce6e}
+.z-nextbtn{float:left;width:100%;}
+.bd-top{border-top:1px solid #e8e8e8}
+.workflow-m-vis-fm  ul .tips{float:left;padding:5px 0 0 130px;width:100%;}
+.workflow-m-vis-fm  ul .tips a{color:#00ce6d}
+.workflow-m-vis-fm .s-sh{width:50%;}
+.workflow-m-tab{float:left;width:100%;}
+.workflow-m-tab ul{float:left;margin:20px 0 0  100px;width:900px;border:1px solid #e8e8e8}
+.workflow-m-tab ul li{float:left;}
+.workflow-m-tab ul .bt{float:left;padding:0 10px;width:100%;height:40px;background:#f8f8f8;}
+.workflow-m-tab ul .bt p{float:left;line-height:40px;}
+.workflow-m-tab ul .bt p span{float:left;}
+.workflow-m-tab ul .bt .rt{float:right;}
+.workflow-m-tab ul .bt .rt i{font-size:14px;margin-right:10px;}
+.workflow-m-tab ul .bt .rt a{color:#666}
+.workflow-m-tab ul .lst{padding:20px 10px;}
+
+.eject-tips{position:fixed;top:50%;left:50%;margin-top:-160px;margin-left:-200px;z-index:999;padding:10px 20px 20px 20px;width:400px;min-height:200px;background:#fff;display:none;}
+.tips-tt{float:left;width:100%;}
+.tips-tt p{float:left}
+.tips-tt .right{float:right}
+.tips-tt .right i{font-size:16px;color:#333}
+.tips-list{float:left;margin-top:30px;width:100%;text-align:center;}
+.tips-list .tt{font-size:18px;color:#666;}
+.tips-list p{color:#666}
+
+.workflow-lst .table tr td a{position:relative;}
+.workflow-lst .table tr a .z-tx{position:absolute;left:-10px;top:20px;z-index:99;display:none;min-width:40px;background:#787878;color:#fff;font-size:12px;text-align:center;float:left}
+.workflow-lst .table tr a .z-tx span{position:absolute;top:-7px;left:36%;}
+.workflow-lst .table tr a .z-tx span i{font-size:16px;color:#787878}
+
+
+.workflow-m-xd-sh{float:left;width:100%;}
+.workflow-m-xd-sh ul{float:left;width:100%;}
+.workflow-m-xd-sh ul li{position:relative;float:left;margin-top:10px;margin-right:20px;line-height:30px;}
+.workflow-m-xd-sh ul li p{float:left;position:relative;}
+.workflow-m-xd-sh ul li .bt{margin-right:10px;width:90px;text-align:right;}
+.workflow-m-xd-sh ul li p i{position:absolute;right:10px;top:0;}
+
+
+.workflow-m-trk-tt ul .z-crt{border-bottom:2px solid #00ce6d}
+.workflow-m-trk-tt ul .line-a{float:left;margin:6px 10px 0 0;height:18px;border:none;border-right:1px solid #e8e8e8;}
+.workflow-m-trk-tt ul  li{float:left;margin-right:15px;padding:0 10px 3px;font-size:14px;color:#333;line-height:30px;cursor:pointer;}
+.textareah500{width:500px;height:100px;padding:0 4px;line-height:28px;background:none;}

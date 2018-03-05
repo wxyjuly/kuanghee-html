@@ -1,0 +1,226 @@
+/*!
+ * search-index-css
+ * Copyright 2018 Kuangkee, Inc.
+ * Licensed under the Xxx license
+ */
+/* 通用部分 */
+body {
+	"font-family: &#39;Microsoft Yahei&#39;,&#39;微软雅黑&#39;,Arial,&#39;Hiragino Sans GB&#39;,&#39;宋体&#39;,&#39;Helvetica Neue&#39;,Helvetica,sans-serif;"
+}
+
+.active div{
+	border: 2px solid #7A67EE !important;
+}
+a {
+	text-decoration:none !important;
+}
+
+/*兼容性设置*/
+@media only screen and (max-width: 1080px), only screen and (max-device-width:1080px) {
+    html,body {
+        font-size:67.5px;
+    }
+}
+@media only screen and (max-width: 960px), only screen and (max-device-width:960px) {
+    html,body {
+        font-size:60px;
+    }
+}
+@media only screen and (max-width: 800px), only screen and (max-device-width:800px) {
+    html,body {
+        font-size:50px;
+    }
+}
+@media only screen and (max-width: 720px), only screen and (max-device-width:720px) {
+    html,body {
+        font-size:45px;
+    }
+}
+@media only screen and (max-width: 640px), only screen and (max-device-width:640px) {
+    html,body {
+        font-size:40px;
+    }
+}
+@media only screen and (max-width: 600px), only screen and (max-device-width:600px) {
+    html,body {
+        font-size:37.5px;
+    }
+}
+@media only screen and (max-width: 540px), only screen and (max-device-width:540px) {
+    html,body {
+        font-size:33.75px;
+    }
+}
+@media only screen and (max-width: 480px), only screen and (max-device-width:480px) {
+    html,body {
+        font-size:30px;
+    }
+}
+@media only screen and (max-width: 414px), only screen and (max-device-width:414px) {
+    html,body {
+        font-size:25.875px;
+    }
+}
+@media only screen and (max-width: 400px), only screen and (max-device-width:400px) {
+    html,body {
+        font-size:25px;
+    }
+}
+@media only screen and (max-width: 375px), only screen and (max-device-width:375px) {
+    html,body {
+        font-size:23.4375px;
+    }
+}
+@media only screen and (max-width: 360px), only screen and (max-device-width:360px) {
+    html,body {
+        font-size:22.5px;
+    }
+}
+@media only screen and (max-width: 320px), only screen and (max-device-width:320px) {
+    html,body {
+        font-size:20px;
+    }
+}
+@media only screen and (max-width: 240px), only screen and (max-device-width:240px) {
+    html,body {
+        font-size:15px;
+    }
+}
+
+/* 内容部分  */
+/* search-content */
+.search-context-block {
+	width: 90%;
+	height: 2rem;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+	text-align: center;
+	padding: 0.2rem;
+}
+.search-context-input {
+	width: 87%;
+	border: 0;
+	float: left;
+	color: black;
+	padding-left: 3%;
+	font-size: 0.6rem;
+	height: 1.6rem;
+	float: left;
+	line-height: 1.6rem;
+}
+.search-context-btn {
+	width: 13%; height: 1.6rem; float: left; line-height: 1.6rem;
+}
+.search-context-img {
+	width: 1rem; height: 1rem;
+}
+
+/*--Not used -start --*/
+/* brand */
+.container-line {
+	margin: 10% auto 7%; font-size: 1rem; color: #2a378f;
+}
+.container-brand-outter-div {
+	padding: 2% 2%;
+}
+.container-brand-inner-div {
+	border: 1px solid #EAEAEA; border-radius: 3px; height: 1.4rem; line-height: 1.4rem; color: #4c4c4c; position: relative; font-size: 0.6rem;
+}
+.container-brand-inner-span {
+	width: 20%; display: none; position: absolute; bottom: 0; right: 0;
+}
+.container-brand-inner-span-img {
+	width: 100%; display: block;
+}
+/* search-btn */
+.container-search-btn{
+	width: 90%; height: 1.7rem; line-height: 1.7rem; background: #81acea; border-radius: 25px; color: white; font-size: 1rem; margin-top: 10%;
+}
+/*--Not used -end --*/
+
+/*search Result sucess*/
+.container-search-success-brand {
+	width: 20%; float: left; height: 1.5rem; border: 1px solid #eaeaea; border-bottom: 0; text-align: center; line-height: 1.5rem; margin-top: 15%; font-size: 0.7rem;
+}
+.container-search-success-brand-line {
+	width: 80%; float: left; height: 1.5rem; margin-top: 15%; border-bottom: 1px solid #eaeaea; border-right: 0;
+}
+.container-search-success-result-img-div {
+	width: 100%; float: left; border: 1px solid #eaeaea; border-top: 0;
+}
+
+.container-search-success-result-div {
+	width: 100%; float: left; height: 2rem; border: 1px solid #eaeaea; border-top: 0; line-height: 2rem;
+}
+.container-search-success-result-img-div img {
+	width: 100% ;
+}
+
+.container-search-success-result-div div {
+	float: left; font-size: 0.7rem;
+}
+
+.container-search-success-result-div div img {
+	height: 0.7rem;
+}
+
+/* professinal start */
+.class-line-header {
+	margin: 7% auto 7%;font-size: 0.8rem;color: #2a378f;text-align: center;
+}
+
+/* professinal start   */
+.professional-container-container-div {
+	width: 100%; border-bottom: 1px solid #EAEAEA; padding: 5px; margin-top: 5px;
+}
+.professional-container-container-div-img {
+	width: 20%; height: 3rem; float: left; line-height: 3rem; text-align: center; padding: 5px;
+}
+.professional-container-container-div-img img {
+	width: 100%; border-radius: 50%;
+}
+.professional-container-container-div-content {
+	float: left; width: 50%;
+}
+.professional-container-container-div-content-div1 {
+	width: 100%; height: 1.5rem; float: left; line-height: 1.5rem;
+}
+.professional-container-container-div-content-div1-name {
+	float: left; height: 1.5rem; font-size: 0.75rem;
+}
+.professional-container-container-div-content-div1-brand {
+	float: left; height: 1.5rem; padding: 0.25rem; text-align: center; font-size: 0.5rem; margin-top: -0.25rem;
+}
+.professional-container-container-div-content-div1-brand span{
+	background: #64cbf5; height: 1rem; margin-bottom: 1rem; border-radius: 1rem; color: white; padding: 0.1rem;
+}
+
+.professional-container-container-div-content-div1-price {
+	float: right; height: 1.5rem; font-size: 0.75rem; color: #FF8C69;
+}
+
+.professional-container-info-div {
+	width: 100%; float: left; line-height: 1rem; font-size: 0.5rem; color: #FF8C69
+}
+.professional-container-info-div span {
+	color: red;
+}
+
+.professional-container-info-phone {
+	line-height: 3.5rem; width: 30%; text-align: center; float: right;
+}
+.professional-container-info-phone span {
+	line-height: 1.7rem; height: 1.7rem; background: #e7edff; color: #2a378f; border-radius: 25px; padding: 0.25rem 0.3rem; font-size: 0.65rem;
+}
+.professional-container-info-phone span a{
+	color: #2a378f;
+}
+
+.professional-container-info-desc {
+	margin-left: 20%; margin-top: 5px; color: gray; font-size: 0.75rem;
+}
+/* professinal end */
+
+.error-code-style {
+	margin: 10% auto 7%; font-size: 0.7rem; color: #C6C6C6; text-align: center;
+}

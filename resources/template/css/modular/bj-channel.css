@@ -1,0 +1,40 @@
+.m-trk-tt .z-sch-int a{position:absolute;top:14px;right:10px;}
+.zz-tips{width:380px;height:36px;background:#fdf8f2;margin:0 auto;text-align:center;line-height:36px;color:#f5a72b}
+.qua-warp{float:left;}
+.suspen-warp{width:1190px;margin:0 auto;position:relative;}
+.suspen-lst{position:fixed;right:100px;top:100px;z-index:999;width:40px;background:#e6e6e6;text-align:center;}
+.suspen-lst a{color:#888;margin-bottom:10px;}
+.suspen-lst p{line-height:20px;width:40px;border-bottom:1px solid #c8c8c8;cursor:pointer;}
+.suspen-lst .z-crt{background:#00ce6d;color:#fff}
+.zz-step{float:left;width:100%;padding:10px 50px 30px;background:#f8f8f8;text-align:center;}
+.xg-fc-gre{color:#00ce6d}
+.m-vis-fm ul .fc-ye{color:#f5a72b}
+.m-vis-fm .s-xsh{width:33.333%;}
+.m-vis-fm ul .je-y{font-size:16px;font-weight:bold;}
+.m-trk-tt .a-clo{margin:3px 0 0  10px;}
+.m-trk-tt .a-clo a{color:#999}
+
+/**步骤**/
+.mark-step-none{position:relative;float:left;width:90px;}
+.mark-step-none  ul {position:relative;float:left;width:90px;text-align:left;}
+.mark-step-none  ul .wd{position:absolute;left:-15px;top:20px;width:100%;}
+.mark-step-none  ul .circle{float:left;}
+.mark-step-none  ul .circle i{font-size:12px;}
+.mark-step-none .green-line{position:absolute;left:0;top:0;margin-top:10px;width:90px;height:2px;}
+.mark-sm-st{width:60px;}
+/**进行中**/
+.green-bj ul .circle{color:#1abc96;}
+.green-bj .green-line{border-bottom:1px solid #1abc96;}
+.green-bj .wd{color:#1abc96}
+/**已通过**/
+.tg-green-bj ul .circle{color:#39d5b0;}
+.tg-green-bj .green-line{border-bottom:1px solid #39d5b0;}
+.tg-green-bj .wd{color:#39d5b0}
+/**未通过**/
+.ash-bj ul .circle{color:#ccc;}
+.ash-bj .green-line{border-bottom:1px solid #ccc;}
+.ash-bj .wd{color:#bbbbbb}
+
+
+
+

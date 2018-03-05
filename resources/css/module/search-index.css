@@ -1,0 +1,239 @@
+/*!
+ * search-index-css
+ * Copyright 2018 Kuangkee, Inc.
+ * Licensed under the Xxx license
+ */
+/* 通用部分 */
+body { "
+	font-family: & amp;
+	#39;
+	Microsoft
+	Yahei&amp;
+	#39;
+	,&
+	amp;
+	#39;
+	微软雅黑
+	&amp;
+	#39;
+	,
+	Arial
+	,&amp;
+	#39;
+	Hiragino
+	Sans
+	GB&amp;
+	#39;
+	,&
+	amp;
+	#39;
+	宋体
+	&amp;
+	#39;
+	,&
+	amp;
+	#39;
+	Helvetica
+	Neue&amp;
+	#39;
+	,
+	Helvetica
+	,sans-serif;
+	"
+}
+
+.active div {
+	border: 1px solid #2a378f !important;
+	color: #2a378f !important;
+}
+
+.active span {
+	display: block !important;
+}
+/*兼容性设置*/
+@media only screen and (max-width: 1080px) , only screen and
+	(max-device-width:1080px) {
+	html, body {
+		font-size: 67.5px;
+	}
+}
+
+@media only screen and (max-width: 960px) , only screen and
+	(max-device-width:960px) {
+	html, body {
+		font-size: 60px;
+	}
+}
+
+@media only screen and (max-width: 800px) , only screen and
+	(max-device-width:800px) {
+	html, body {
+		font-size: 50px;
+	}
+}
+
+@media only screen and (max-width: 720px) , only screen and
+	(max-device-width:720px) {
+	html, body {
+		font-size: 45px;
+	}
+}
+
+@media only screen and (max-width: 640px) , only screen and
+	(max-device-width:640px) {
+	html, body {
+		font-size: 40px;
+	}
+}
+
+@media only screen and (max-width: 600px) , only screen and
+	(max-device-width:600px) {
+	html, body {
+		font-size: 37.5px;
+	}
+}
+
+@media only screen and (max-width: 540px) , only screen and
+	(max-device-width:540px) {
+	html, body {
+		font-size: 33.75px;
+	}
+}
+
+@media only screen and (max-width: 480px) , only screen and
+	(max-device-width:480px) {
+	html, body {
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 414px) , only screen and
+	(max-device-width:414px) {
+	html, body {
+		font-size: 25.875px;
+	}
+}
+
+@media only screen and (max-width: 400px) , only screen and
+	(max-device-width:400px) {
+	html, body {
+		font-size: 25px;
+	}
+}
+
+@media only screen and (max-width: 375px) , only screen and
+	(max-device-width:375px) {
+	html, body {
+		font-size: 23.4375px;
+	}
+}
+
+@media only screen and (max-width: 360px) , only screen and
+	(max-device-width:360px) {
+	html, body {
+		font-size: 22.5px;
+	}
+}
+
+@media only screen and (max-width: 320px) , only screen and
+	(max-device-width:320px) {
+	html, body {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 240px) , only screen and
+	(max-device-width:240px) {
+	html, body {
+		font-size: 15px;
+	}
+}
+
+#popup {
+	position: absolute;
+	z-index: 999;
+	background-color: #FFF;
+	left: 50%;
+	margin-left: -45%;
+	top: 25%;
+	/*height: 150px; width: 217px;line-height:94px;*/
+	text-align: center;
+	/*border: 1px solid gray;*/
+	/*margin: 40% auto;*/
+	filter: alpha(Opacity = 90);
+	-moz-opacity: 0.9;
+	opacity: 0.9;
+}
+
+#embedding {
+	position: absolute;
+	background-color: #36F;
+	top: 94px;
+	height: 56px;
+	width: 217px;
+	line-height: 56px;
+	text-align: center;
+}
+
+.weui-cells {
+	border-radius: 15px;
+}
+
+.weui-input {
+	height: 3.411765em !important;
+	line-height: 3.411765em !important;
+}
+
+.weui-btn-area {
+	margin: 1em;
+}
+
+/* 内容部分  */
+/* search-content */
+.search-context-block {
+	width: 90%;
+	height: 2rem;
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+	text-align: center;
+	padding: 0.2rem;
+}
+.search-context-input {
+	width: 87%;
+	border: 0;
+	float: left;
+	color: black;
+	padding-left: 3%;
+	font-size: 0.6rem;
+	height: 1.6rem;
+	float: left;
+	line-height: 1.6rem;
+}
+.search-context-btn {
+	width: 13%; height: 1.6rem; float: left; line-height: 1.6rem;
+}
+.search-context-img {
+	width: 1rem; height: 1rem;
+}
+
+/* brand */
+.container-line {
+	margin: 10% auto 7%; font-size: 1rem; color: #2a378f;
+}
+.container-brand-outter-div {
+	padding: 2% 2%;
+}
+.container-brand-inner-div {
+	border: 1px solid #EAEAEA; border-radius: 3px; height: 1.4rem; line-height: 1.4rem; color: #4c4c4c; position: relative; font-size: 0.6rem;
+}
+.container-brand-inner-span {
+	width: 20%; display: none; position: absolute; bottom: 0; right: 0;
+}
+.container-brand-inner-span-img {
+	width: 100%; display: block;
+}
+/* search-btn */
+.container-search-btn{
+	width: 90%; height: 1.7rem; line-height: 1.7rem; background: #81acea; border-radius: 25px; color: white; font-size: 1rem; margin-top: 10%;
+}
+

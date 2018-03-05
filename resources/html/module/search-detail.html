@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://www.fonang.com/app/index.php?i=26&c=entry&id=67&do=detail&m=wx_search -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>115-故障解决方案</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="../../css/common/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/module/search-detail.css">
+
+<script type="text/javascript" src="../../js/common/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../js/common/jsrender.min.js"></script>
+
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/module/search-detail.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<input type="hidden" id="uId" value="">
+	<input type="hidden" id="articleId" value="">
+	<input type="hidden" id="bId" value="">
+	<input type="hidden" id="bName" value="">
+	<!-- 经度 -->
+	<input type="hidden" id="lng" value="">
+	<!-- 纬度 -->
+	<input type="hidden" id="lat" value="">
+	
+	<div class="container">
+		<a href="javascript:void(0);" id="redirect-search-index">
+			<img class="center-block" id="searchimg" src="../../img/common/logo.png" 
+						style="margin: 10% auto 5%; width: 50%; height: 1rem;">
+		</a>
+	</div>
+
+    <div class="container success-flag" id="article-detail-div">
+
+    </div>
+    
+	<!-- search no result -->
+	<div class="container error-flag" style="display:none;">
+		<img class="center-block" id="searchimg"
+			src="../../img/module/iF3XFc86qfBDcfzzD0FiTCCfbz36c6.jpg"
+			style="margin: 0 auto 1%; width: 92%;">
+		<div class="center-block"
+			style="margin: 10% auto 7%; font-size: 0.7rem; color: #C6C6C6; text-align: center;">查询出错,请换个试一试</div>
+	</div>
+	
+	<!-- professional page -->
+	<div class="professional-container">
+		<div style="height: 1rem; background: #F4F4F4;"></div>
+		<div class="container">
+			<div class="class-line-header">───&nbsp;请教专家  专业解答&nbsp;───</div>
+			<div class="professional-container-container-div" id="profession-list-div">
+				<div class="professional-container-container-div-img">
+					<img src="../../img/module/Z82VEIM219hgpnVV23mf4mhPKKV42h.jpg">
+				</div>
+				<div class="professional-container-container-div-content">
+					<div class="professional-container-container-div-content-div1">
+						<div class="professional-container-container-div-content-div1-name">王敏进&nbsp;</div>
+						<div class="professional-container-container-div-content-div1-brand">
+							<span>小松&nbsp;</span>
+						</div>
+						<div class="professional-container-container-div-content-div1-price">￥0</div>
+					</div>
+					<div class="professional-container-info-div">
+						已被预约次数 :<span>12次 </span>
+						<br> 
+						工程师距您约 : <span>404.54km</span>
+					</div>
+				</div>
+				<div class="professional-container-info-phone">
+					<span>
+						<a href="http://www.fonang.com/app/index.php?
+						i=26&amp;c=entry&amp;money=0.00&amp;
+						servicename=%E7%8E%8B%E6%95%8F%E8%BF%9B&amp;
+						serviceid=88&amp;do=payphone&amp;m=wx_search">查看号码</a>
+					</span>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="professional-container-info-desc">
+					<p>现于广东省梅州市蕉岭县，在国进挖配易购技术有限公司从事技术支持。</p>
+					<p>挖掘机液压从业17年，擅长进口机型液压排故，6~40吨挖掘机液压改装工作。</p>
+					<p>对小松，日立，卡特，住友，加藤有丰富的维修经验。</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container error-flag" style="display:none;">
+			<img class="center-block" id="searchimg"
+				src="../../img/module/iF3XFc86qfBDcfzzD0FiTCCfbz36c6.jpg"
+				style="margin: 0 auto 1%; width: 92%;">
+			<div class="center-block"
+				style="margin: 10% auto 7%; font-size: 0.7rem; color: #C6C6C6; text-align: center;">查询出错,请换个试一试</div>
+		</div>
+		
+	</div>
+	
+	<div class="container success-flag" id="search-success-errorcode-match-div" now="1" num="2">
+		<a href="javascript:void(0);">--我们是有底线的--</a>
+	</div>		
+
+<script id="article-detail-data" type="text/x-jsrender">
+	<div class="class-line-header">───&nbsp;故障代码【{{:errorCode}}】&nbsp;───</div>
+       <div style="width: 100%;color: gray;">
+       	<p>
+       		<img src="../../images/detail/{{:imgContentSmall}}" width="100%">
+       	</p>
+     </div>
+</script>
+
+<script id="profession-list-data" type="text/x-jsrender">
+</script>
+
+<script id="search-success-errorcode-match-js" type="text/x-jsrender">
+{{for}}
+	{{if #getIndex() == 0}}
+		<div class="container-search-success-brand"></div>
+		<div class="container-search-success-brand-line"></div>
+	{{/if}}
+  	<td class="mainTaskName_cell"></td>
+	<a href="search-detail.html?articleId={{:articleId}}">
+		<div class="container-search-success-result-img-div">
+			<img src="../../images/small/{{:imgSearchSmall}}">
+		</div>
+	</a>
+	<div class="container-search-success-result-div">
+		<a href="search-detail.html?articleId={{:articleId}}">
+			<div>
+				<span style="color: black;">&nbsp;&nbsp;参看故障排除方法&nbsp;&nbsp;请教专家&nbsp;&nbsp;</span>
+				<img src="../../img/module/turn.png">
+				<span style="color: #f05a28; font-size: 0.7rem;">戳我&nbsp;</span>
+			</div>
+		</a>
+	</div>
+{{/for}}
+</script>
+ 
+<script id="article-detail-success-div" type="text/x-jsrender">
+ 	<div style="width: 100%;color: gray;">
+		<p>
+			<img src="../../images/big/1.png" width="100%">
+		</p>
+		<p>
+			<img src="../../images/big/1.png" width="100%">
+		</p>
+	</div>
+</script>
+ 
+</body>
+</html>

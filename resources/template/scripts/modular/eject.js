@@ -1,0 +1,930 @@
+
+//渠道分组弹出框
+$(document).ready(function($) {
+	$('#groubtn').click(function(){
+    var kindList = JSON.parse($("#collection-kind-hid").val());
+    if (typeof(kindList) != 'undefined') {
+        for (var i = 0; i < kindList.length; i++) {
+            var _li = $("#"+kindList[i]);
+            if (_li.length > 0) {
+                _li.addClass("current");
+            }
+        }
+    }
+	$('#eject-mask').fadeIn(100);
+	$('#ej-med').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#z-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-med').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+
+//预警弹出框
+$(document).ready(function($) {
+	$('#yjbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-lard').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ej-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-lard').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//网点历史分配
+$(document).ready(function($) {
+	$('#se-dotbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-dot').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#se-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-dot').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//网点历史分配
+$(document).ready(function($) {
+	$('#rkbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-tips').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#tip-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-tips').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#tips-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-tips').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//终止渠道
+$(document).ready(function($) {
+	$('#zzbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-termin').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ter-csic').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-termin').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ter-csebtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-termin').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//巡店管理弹出
+$(document).ready(function($) {
+	$('#shbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-shop').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ej-shcs').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-shop').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+// 非走访弹出
+$(document).ready(function($) {
+	$('#visibtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-visit').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ej-vis').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-visit').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//走访任务 指标弹出
+$(document).ready(function($) {
+	$('#chbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-choice').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ch-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-choice').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ch-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-choice').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//走访任务 渠道选择弹出
+$(document).ready(function($) {
+	$('#chbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-choice').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ch-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-choice').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ch-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-choice').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//走访任务 选择指标弹出
+$(document).ready(function($) {
+	$('#ch-xdbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-ch-zb').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ch-zb-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-ch-zb').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ch-zb-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-ch-zb').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//走访任务 选择渠道经理弹出
+$(document).ready(function($) {
+	$('#ch-mgbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-mg-choice').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ch-mg-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-mg-choice').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ch-mg-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-mg-choice').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//非走访任务 选择渠道经理弹出
+$(document).ready(function($) {
+	$('#ch-mgbtn1').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-mg-choice1').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ch-mg-csicon1').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-mg-choice1').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ch-mg-csbtn1').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-mg-choice1').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//非走访任务 选择渠道经理弹出
+$(document).ready(function($) {
+	$('#cxbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-cx').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#cx-csic').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-cx').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//渠道管理页面 撤销
+$(document).ready(function($) {
+	$('#rkbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-rk').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#rk-csic').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-rk').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#rk-csebtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-rk').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//渠道管理页面 撤销
+$(document).ready(function($) {
+	$('#new-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-ins').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ins-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ins-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//事项跟踪详情弹出框 撤销
+$(document).ready(function($) {
+	$('#xdbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-xd').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#xd-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-xd').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//提示弹出框1
+$(document).ready(function($) {
+	$('#p-btn1').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-pro1').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#p-cic1').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro1').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#p-cibtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro1').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//提示弹出框2
+$(document).ready(function($) {
+	$('#p-btn2').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-pro2').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#p-cic2').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro2').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//提示弹出框3
+$(document).ready(function($) {
+	$('#p-btn3').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-pro3').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#p-cic3').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro3').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#sc-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro3').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//提示弹出框4
+$(document).ready(function($) {
+	$('#p-btn4').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-pro4').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#p-cic4').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro4').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#p-ok4').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro4').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	
+})
+//提示弹出框5
+$(document).ready(function($) {
+	$('#p-btn5').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-pro5').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#p-cic5').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro5').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//提示弹出框6
+$(document).ready(function($) {
+	$('#new-okbtn').click(function(){
+	$('#eject-mask1').fadeIn(100);
+	$('#eject-pro4').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#cls-tips').click(function(){
+	$('#eject-mask1').fadeOut(200);
+	$('#eject-pro4').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//提示弹出框7
+$(document).ready(function($) {
+	$('#btn7').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-pro7').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#p-cic7').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro7').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#p-cibtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro7').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//提示弹出框8
+$(document).ready(function($) {
+	$('#btn8').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-pro8').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#p-cic8').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-pro8').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//代理商出框
+$(document).ready(function($) {
+	$('#dl-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-dl').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#dl-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-dl').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#dl-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-dl').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//合作商出框
+$(document).ready(function($) {
+	$('#hzs-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-hzs').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#hzs-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-hzs').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#hzs-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-hzs').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//合同
+$(document).ready(function($) {
+	$('#ht-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-ht').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ht-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-ht').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ht-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-ht').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//合作厅出框
+$(document).ready(function($) {
+	$('#hz-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-hz').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#hz-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-hz').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//修改星级规则配置弹出框
+$(document).ready(function($) {
+	$('#mo-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-ins').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ins-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ins-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//星级 添加指标弹出
+$(document).ready(function($) {
+	$('#star-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-star').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#erro-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-star').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#star-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-star').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//商圈 添加指标弹出
+$(document).ready(function($) {
+	$('#star-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-trading').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#tra-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-trading').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#tra-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-trading').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//商圈 删除弹出
+$(document).ready(function($) {
+	$('#det-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-det').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#det-clsicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-det').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#det-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-det').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+
+//复制往期规则
+$(document).ready(function($) {
+	$('#rulebtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-rule').slideDown(100);
+	
+	})
+	$('#rule-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-rule').slideUp(200);
+	
+	})
+	$('#rule-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-rule').slideUp(200);
+	
+	})
+})
+//新增评分指标
+$(document).ready(function($) {
+	$('#scbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-sc').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#ins-scicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-sc').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#ins-scbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-sc').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//任务跟踪
+$(document).ready(function($) {
+	$('#taskbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-task').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#task-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-task').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#task-btn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-task').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//硬件基础得分弹出框
+$(document).ready(function($) {
+	$('#hardbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-hard').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#hd-scicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-hard').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#hd-scbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-hard').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//扣分弹出框
+$(document).ready(function($) {
+	$('#podbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-points').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#po-scicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-points').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#po-scbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-points').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//河南巡店 检查项目新增
+$(document).ready(function($) {
+	$('#newadd-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#newadd').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#newadd-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#newadd').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#newadd-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#newadd').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+$(document).ready(function($) {
+	$('#qy-file-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#qy-file').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#qy-file-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#qy-file').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#qy-file-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#qy-file').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//分组出框
+$(document).ready(function($) {
+	$('#groubtn1').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-med').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#z-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-med').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//任务出框
+$(document).ready(function($) {
+	$('#rw-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#eject-rw').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#rw-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-rw').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#rw-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#eject-rw').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//青海违规管理
+$(document).ready(function($) {
+	$('#iegalbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-iegal').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#iegal-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-iegal').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//青海违规管理
+$(document).ready(function($) {
+	$('#iemodbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-iemod').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#iemod-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-iemod').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#iemod-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-iemod').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//青海违规管理 核实
+$(document).ready(function($) {
+	$('#veribtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-veri').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#veri-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-veri').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#veri-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-veri').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//
+$(document).ready(function($) {
+	$('#int-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-int').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#int-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-int').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#int-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-int').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//添加
+$(document).ready(function($) {
+	$('#add-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-add-mk').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#add-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-add-mk').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#add-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-add-mk').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//拒绝
+$(document).ready(function($) {
+	$('#jjbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-re').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#re-csic').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-re').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#re-csebtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-re').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//回退
+$(document).ready(function($) {
+	$('#fallbtn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-fall').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#fall-csic').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-fall').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#fall-csebtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-fall').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//打分
+$(document).ready(function($) {
+	$('#da-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-df').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#df-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-df').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#df-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-df').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//巡店详情
+$(document).ready(function($) {
+	$('#gz-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#gz-ins').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#gz-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#gz-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#gz-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#gz-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//巡店详情 反馈
+$(document).ready(function($) {
+	$('#fk-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#fk-ins').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#fk-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#fk-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#fk-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#fk-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//日志查看
+$(document).ready(function($) {
+	$('#rz-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#rz-ins').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#rz-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#rz-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#rz-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#rz-ins').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+//工单
+$(document).ready(function($) {
+	$('#gd-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-gd').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#gd-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-gd').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#gd-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-gd').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+$(document).ready(function($) {
+	$('#gdxq-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#ej-gdxq').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#gdxq-csicon').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-gdxq').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#gdxq-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#ej-gdxq').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
+$(document).ready(function($) {
+	$('#jg-btn').click(function(){
+	$('#eject-mask').fadeIn(100);
+	$('#jg-bao').slideDown(100);
+	$("body,html").addClass("z-ov"); 
+	})
+	$('#jg-close').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#jg-bao').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+	$('#jg-csbtn').click(function(){
+	$('#eject-mask').fadeOut(200);
+	$('#jg-bao').slideUp(200);
+	$("body,html").removeClass("z-ov"); 
+	})
+})
