@@ -2,12 +2,12 @@
 <!-- saved from url=(0073)http://www.fonang.com/app/index.php?i=26&c=entry&eid=1094#wechat_redirect -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查询</title>
-<!-- <title>查询7050 . '+' . </title> -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="format-detection" content="telephone=no">
+
 <link rel="stylesheet" href="../../css/common/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/common/weui.min.css">
 <link rel="stylesheet" href="../../css/module/search-index.css">
@@ -58,146 +58,33 @@
 	
 	<div class="container" style="text-align: center;">
 		<div class="container-line">───&nbsp;&nbsp;请选择品牌&nbsp;&nbsp;───</div>
-		<div class="row">
 		
-			<div class="col-xs-3 d0 active container-brand-outter-div" rel="44" brand_id="44" brand_name="小松">
-				<div class="container-brand-inner-div" >
-					小松 
-					<span class="container-brand-inner-span">
-						<img src="../../img/module/ico-select.png" class="container-brand-inner-span-img">
-					</span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d1 " rel="45" brand_id="45" brand_name="卡特 ">
-				<div class="container-brand-inner-div">
-					卡特 
-					<span class="container-brand-inner-span">
-						<img src="../../img/module/ico-select.png" class="container-brand-inner-span-img">
-					</span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d2" rel="46" >
-				<div class="container-brand-inner-div">
-					日立 
-					<span class="container-brand-inner-span">
-						<img src="../../img/module/ico-select.png" class="container-brand-inner-span-img">
-					</span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d3" rel="47" >
-				<div class="container-brand-inner-div">
-					神钢 
-					<span class="container-brand-inner-span">
-						<img src="../../img/module/ico-select.png" class="container-brand-inner-span-img">
-					</span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d4" rel="48" >
-				<div class="container-brand-inner-div">
-					三一 
-					<span class="container-brand-inner-span">
-						<img src="../../img/module/ico-select.png" class="container-brand-inner-span-img">
-					</span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d5" rel="49" >
-				<div
-					class="container-brand-inner-div">
-					加藤 <span
-						class="container-brand-inner-span"><img
-						src="../../img/module/ico-select.png"
-						class="container-brand-inner-span-img"></span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d6" rel="50" >
-				<div
-					class="container-brand-inner-div">
-					住友 <span
-						class="container-brand-inner-span"><img
-						src="../../img/module/ico-select.png"
-						class="container-brand-inner-span-img"></span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d7" rel="51" >
-				<div
-					class="container-brand-inner-div">
-					现代 <span
-						class="container-brand-inner-span"><img
-						src="../../img/module/ico-select.png"
-						class="container-brand-inner-span-img"></span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d8" rel="52" >
-				<div
-					class="container-brand-inner-div">
-					凯斯 <span
-						class="container-brand-inner-span"><img
-						src="../../img/module/ico-select.png"
-						class="container-brand-inner-span-img"></span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d9" rel="53" >
-				<div
-					class="container-brand-inner-div">
-					沃尔沃 <span
-						class="container-brand-inner-span"><img
-						src="../../img/module/ico-select.png"
-						class="container-brand-inner-span-img"></span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d10" rel="88" >
-				<div
-					class="container-brand-inner-div">
-					斗山 <span
-						class="container-brand-inner-span"><img
-						src="../../img/module/ico-select.png"
-						class="container-brand-inner-span-img"></span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d11" rel="91" >
-				<div
-					class="container-brand-inner-div">
-					徐工 <span
-						class="container-brand-inner-span"><img
-						src="../../img/module/ico-select.png"
-						class="container-brand-inner-span-img"></span>
-				</div>
-			</div>
-			
-			<div class="col-xs-3 container-brand-outter-div d12" rel="89" >
-				<div
-					class="container-brand-inner-div">
-					装载机 <span
-						class="container-brand-inner-span"><img
-						src="../../img/module/ico-select.png"
-						class="container-brand-inner-span-img"></span>
-				</div>
-			</div>
+		<div class="row" id="brand-list">
 		</div>
 		
 		<div onclick="subRedirect()" class="center-block container-search-btn">
 			查询
 		</div>
 	</div>
-		<input type="hidden" id="uId" value="1">
-		<input type="hidden" id="bId" value="441">
-		<input type="hidden" id="bName" value="小松">
-		<!-- 经度 -->
-		<input type="hidden" id="lng" value="113.8599170311">
-		<!-- 纬度 -->
-		<input type="hidden" id="lat" value="27.6395442211">
-	
-	
+	<input type="hidden" id="uId" value="">
+	<input type="hidden" id="bId" value="">
+	<input type="hidden" id="bName" value="">
+	<!-- 经度 -->
+	<input type="hidden" id="lng" value="">
+	<!-- 纬度 -->
+	<input type="hidden" id="lat" value="">
+
+	<script id="brand-list-render" type="text/x-jsrender">
+	{{for}}
+		<div class="col-xs-3 d0 container-brand-outter-div" rel="{{:id}}" brand_id="{{:id}}" brand_name="{{:name}}">
+			<div class="container-brand-inner-div" >
+				{{:name}}
+				<span class="container-brand-inner-span">
+					<img src="../../img/module/ico-select.png" class="container-brand-inner-span-img">
+				</span>
+			</div>
+		</div>
+	{{/for}}	
+	</script>
 </body>
 </html>

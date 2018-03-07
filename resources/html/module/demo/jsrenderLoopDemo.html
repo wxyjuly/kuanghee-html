@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!-- Load jQuery -->
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <!-- Load JsRender latest version, from www.jsviews.com: -->
+  <script src="//www.jsviews.com/download/jsrender.js"></script>
+  
+    <title>jsrender nest demo</title>
+</head>
+<body>
+<div id="studentList">abc</div>
+<script type="text/x-jsrender" id="studentTemplate">
+    {{for #data}}
+        <h3>{{:name}}</h3>
+        <ul>
+        {{for language}}
+            <li>
+            {{:#parent.parent.data.name}} is learning {{:title}}<br/>
+            {{for scores}}
+                <a href="#">{{:score}}</a>
+            {{/for}}
+            </li>
+        {{/for}}
+        </ul>
+    {{/for}}
+</script>
+<script type="text/javascript">
+    var students = [{name:"张三",language:[{title:"中",scores:[{score:12},{score:13},{score:14}]},{title:"英",scores:[{score:12},{score:13},{score:14}]},{title:"数",scores:[{score:12},{score:13},{score:14}]}]},
+                    {name:"李四",language:[{title:"中",scores:[{score:12},{score:13},{score:14}]},{title:"中",scores:[{score:12},{score:13},{score:14}]},{title:"中",scores:[{score:12},{score:13},{score:14}]}]},
+                    {name:"王五",language:[{title:"中",scores:[{score:12},{score:13},{score:14}]},{title:"中",scores:[{score:12},{score:13},{score:14}]},{title:"中",scores:[{score:12},{score:13},{score:14}]}]}];
+    $("#studentList").html($("#studentTemplate").render(students));
+</script>
+</body>
+</html>

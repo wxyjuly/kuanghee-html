@@ -4,6 +4,8 @@
 		initParams() ;
 		redirectSearchIndex() ;
 		sub(2) ; //初始化提交搜索
+		
+		initProfessionInfo(); 
 	});
 	
 	function subRedirect() {
@@ -32,7 +34,6 @@
 				+ "&lat=" 
 				+ lat;
 	}
-	
 	
 	function sub(type) {
 		var key ;
@@ -89,6 +90,45 @@
 			if(showErrorFlag==true){
 				showDivByResult("error-flag") ;
 			}
+		});
+	}
+	
+	function initProfessionInfo() {
+		var uId = $('#uId').val();
+		var lng = $('#lng').val();
+		var lat = $('#lat').val();
+		
+		//ajax 查询数据
+		var url = baseProjectPath+"/queryProfList" ;
+		var data = {} ;
+		data["userId"] = uId ;
+		data["longitude"] = lng ;
+		data["latitude"] = lat ;
+		data["page"] = 1 ;
+		data["rows"] = 3 ;
+		
+		//ajax
+		$.post(url,data,function(data){
+			if(!isEmpty(data)
+					&&('000000'==data.status||'0'==data.status)
+					&& !isEmpty(data.data)) { //成功，显示
+				var showErrorFlag = false ;
+				var beans = data.data ; 
+				if (!isEmpty(beans)) {
+					var htmlOutput ;
+					var template = $.templates("#profession-div-content-script");
+					htmlOutput = template.render(beans);
+					$("#profession-div-content").html(htmlOutput);
+					setAppendLocationParams(); //所有href添加对应参数
+				} else {
+					showErrorFlag = true ;
+				}
+				
+			} else { //error，给提示
+				showErrorFlag = true ;
+			}
+			
+			bindSaveOrder() ;
 		});
 		
 	}
@@ -240,3 +280,48 @@
 			$("#bName").val(brandName) ;
 		});
 	}
+	
+	/**
+	 * Order
+	 * @returns
+	 */
+	function bindSaveOrder(){
+		$(".show-phone").bind("click",function(e){
+			var pId = $(this).attr("id") ;
+			var uId = $('#uId').val() ;
+			
+			var url = baseProjectPath+"/createOrder" ;
+			var data = {} ;
+			data["uId"] = uId ;
+			data["pId"] = pId ;
+			
+			//ajax
+			$.post(url,data,function(data){
+				if(!isEmpty(data)
+						&&('000000'==data.status||'0'==data.status)
+						&& !isEmpty(data.data)) { //成功，显示
+					var showErrorFlag = false ;
+					var beans = data.data ; 
+					
+					if (!isEmpty(beans)) {
+						var orderId = beans.id ;
+						var phone = beans.phone ;
+						window.location.href = "order-pay-success.html?uId=" 
+							+ uId + "&orderId=" + orderId +"&phone="+phone ;
+					} else {
+						showErrorFlag = true ;
+					}
+					
+				} else { //error，给提示
+					showErrorFlag = true ;
+				}
+				if(showErrorFlag){
+					alert("网络繁忙，请稍后重试...");
+				}
+			});
+			
+		});
+	}
+	
+	
+	
