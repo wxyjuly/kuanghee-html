@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+<!-- saved from url=(0130)http://www.fonang.com/app/index.php?i=26&c=entry&do=result&m=wx_search&thetitle=1&finallyclass=44&lng=113.85991703&lat=27.63954422 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>故障详情</title>
+<title>查询结果</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no, address=no">
@@ -12,20 +14,19 @@
 <meta name="description" content="">
 
 <link rel="stylesheet" href="../../css/common/bootstrap.min.css">
-<link rel="stylesheet" href="../../css/module/search-detail.css">
+<link rel="stylesheet" href="../../css/module/search-list.css">
 
 <script type="text/javascript" src="../../js/common/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="../../js/common/jsrender.min.js"></script>
 
 <script type="text/javascript" src="../../js/common/common.js"></script>
-<script type="text/javascript" src="../../js/module/search-detail.js"></script>
-<style type="text/css">
+<script type="text/javascript" src="../../js/module/search-list.js"></script>
 
-</style>
 </head>
+
 <body>
 	<input type="hidden" id="uId" value="">
-	<input type="hidden" id="articleId" value="">
+	<input type="hidden" id="key" value="">
 	<input type="hidden" id="bId" value="">
 	<input type="hidden" id="bName" value="">
 	<!-- 经度 -->
@@ -39,60 +40,88 @@
 						style="margin: 10% auto 5%; width: 50%; height: 1rem;">
 		</a>
 	</div>
-
-    <div class="container success-flag" id="article-detail-div">
-
-    </div>
-    
+	
+	<!-- search text，搜索文本框 -->
+	<div class="center-block search-context-block">
+		<input class="search-context-input"	type="text" name="title" placeholder="请输入故障代码或关键字" value="">
+		<span class="search-context-btn" onclick="subRedirect()">
+			<img class="search-context-img" src="../../img/common/search.png">
+		</span>
+	</div>
+	<br>
+	
+	<!-- search have result -->
+	<div class="container success-flag" id="search-success-errorcode-match-div">
+	</div>
+	<br>
+	
 	<!-- search no result -->
 	<div class="container error-flag" style="display:none;">
 		<img class="center-block" id="searchimg"
 			src="../../img/common/no-result.jpg"
 			style="margin: 0 auto 1%; width: 92%;">
-		<div class="center-block"
-			style="margin: 10% auto 7%; font-size: 0.7rem; color: #C6C6C6; text-align: center;">查询出错,请换个试一试</div>
+		<div class="center-block error-code-style">查询出错,请换个试一试</div>
 	</div>
 	
 	<!-- professional page -->
-	<div class="professional-container">
+	<div class="professional-container" >
 		<div style="height: 1rem; background: #F4F4F4;"></div>
 		<div class="container">
 			<div class="class-line-header">───&nbsp;请教专家  专业解答&nbsp;───</div>
 			
-			<div id="profession-div-content"> </div>
+			<div id="profession-div-content">
+			</div>
 		</div>
-		
 	</div>
-	
-	<div class="caseud error-code-style" id="profession-list" now="1" num="2">
-	    <a href="javascript:void(0);">--更多专家>>>>--</a>    
-	</div>	
 
-<script id="article-detail-data" type="text/x-jsrender">
-	<div class="class-line-header">───&nbsp;故障代码【{{:errorCode}}】&nbsp;───</div>
-       <div style="width: 100%;color: gray;">
-       	<p>
-       		<img src="../../images/detail/{{:imgContentSmall}}" width="100%">
-       	</p>
-     </div>
-     <div style="width: 100%;color: gray;">
-		<p>
-       		{{:content}}
-       	</p>
-     </div>
+<!-- 滑动分页，效果：http://zixuephp.net/article-181.html -->
+<!-- 记录初始化的页数，now为当前页，num为总页数，这个数值的设置是通过php获取分页的时候的总页数 -->
+<div class="caseud error-code-style" id="profession-list" now="1" num="2">
+    <a href="javascript:void(0);">--更多专家>>>>--</a>    
+</div>
+
+<script id="search-success-errorcode-match-js" type="text/x-jsrender">
+{{for}}
+	{{if #getIndex() == 0}}
+		<div class="container-search-success-brand"></div>
+		<div class="container-search-success-brand-line"></div>
+	{{/if}}
+  	<td class="mainTaskName_cell"></td>
+	<a href="search-detail.html?articleId={{:articleId}}">
+		<div class="container-search-success-result-img-div">
+
+		<!--<img src="../../images/small/{{:imgSearchSmall}}">-->
+		<div class="row" >
+            <div class="col-xs-4 border">
+				<img src="../../img/common/tools.png" style="width: 100%; height: 100%"/>
+            </div>
+            <div class="col-xs-8 border">
+                <div class="row">
+                    <div class="col-xs-12 padding-0-0 border">
+                        <span class="result-title">【{{:errorCode}}】</span>
+                    </div>
+                    <div class="col-xs-12 padding-0-0 border">
+                        <span class="result-desc">{{:title}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+		</div>
+	</a>
+	<div class="container-search-success-result-div">
+		<a href="search-detail.html?articleId={{:articleId}}">
+			<div>
+				<span style="color: black;">&nbsp;&nbsp;参看故障排除方法&nbsp;&nbsp;请教专家&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<img src="../../img/common/turn.png">
+				<span style="color: #f05a28; font-size: 0.7rem;">戳我&nbsp;</span>
+			</div>
+		</a>
+	</div>
+{{/for}}
 </script>
 
-<script id="article-detail-success-div" type="text/x-jsrender">
- 	<div style="width: 100%;color: gray;">
-		<p>
-			<img src="../../images/big/1.png" width="100%">
-		</p>
-		<p>
-			<img src="../../images/big/1.png" width="100%">
-		</p>
-	</div>
-</script>
- 
+
+
 <script id="profession-div-content-script" type="text/x-jsrender">
 {{for}}
 	<div class="professional-container-container-div">
@@ -124,11 +153,17 @@
 		</div>
 		<div style="clear: both;"></div>
 		<div class="professional-container-info-desc">
-			<p>现于{{:agencyShopName}}从事技术支持。</p>
+			<p>{{:agencyShopName}}</p>
 			<p>{{:info}}</p>
 		</div>
 	</div>
 {{/for}}
-</script> 
+</script>
+
+<script id="search-recommend" type="text/x-jsrender">
+{{for}}
+{{/for}}
+</script>
+
 </body>
 </html>

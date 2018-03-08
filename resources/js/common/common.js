@@ -1,5 +1,5 @@
-var baseProjectPath = "/kuangkee-search" ;
-//var baseProjectPath = "" ;
+//var baseProjectPath = "/kuangkee-search" ;
+var baseProjectPath = "" ;
 var IMG_PRE_URL = "http://127.0.0.1:8080/kuangkee-search/resources/images/" ;	
 
 

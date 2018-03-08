@@ -21,7 +21,7 @@
 		var lng = $('#lng').val();
 		var lat = $('#lat').val();
 		
-		location.href = "./search-result.html?"
+		location.href = "./search-list.html?"
 				+"uId="
 				+ uId
 				+"&key="
