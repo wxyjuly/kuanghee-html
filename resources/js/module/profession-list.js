@@ -37,7 +37,7 @@
 	 */
 	function redirectSearchIndex() {
 		$(".redirect-search-index").click(function(){
-			window.location.href="search-index.html?uId="+getAttr(ID_TYPE,'uId') ;
+			window.location.href="search-index.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
 		}) ;
 	}
 	

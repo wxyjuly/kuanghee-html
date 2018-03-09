@@ -20,7 +20,7 @@
 		var lng = $('#lng').val();
 		var lat = $('#lat').val();
 		
-		location.href = "./search-list.html?"
+		location.href = "./search-list.html?version=1&"
 				+"uId="
 				+ uId
 				+"&key="
@@ -198,10 +198,10 @@
 	 */
 	function redirectSearchIndex() {
 		$("#redirect-search-index").click(function(){
-			window.location.href="search-index.html?uId="+getAttr(ID_TYPE,'uId') ;
+			window.location.href="search-index.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
 		}) ;
 		$("#profession-list").click(function(){
-			window.location.href="profession-list.html?uId="+getAttr(ID_TYPE,'uId') ;
+			window.location.href="profession-list.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
 		}) ;
 	}
 	
@@ -306,7 +306,7 @@
 					if (!isEmpty(beans)) {
 						var orderId = beans.id ;
 						var phone = beans.phone ;
-						window.location.href = "order-pay-success.html?uId=" 
+						window.location.href = "order-pay-success.html?version=1&uId=" 
 							+ uId + "&orderId=" + orderId +"&phone="+phone ;
 					} else {
 						showErrorFlag = true ;
@@ -319,7 +319,6 @@
 					alert("网络繁忙，请稍后重试...");
 				}
 			});
-			
 		});
 	}
 	
