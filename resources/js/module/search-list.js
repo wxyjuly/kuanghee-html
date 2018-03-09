@@ -20,7 +20,7 @@
 		var lng = $('#lng').val();
 		var lat = $('#lat').val();
 		
-		location.href = "./search-list.html?version=1&"
+		location.href = "search-list.html?version=1&"
 				+"uId="
 				+ uId
 				+"&key="
