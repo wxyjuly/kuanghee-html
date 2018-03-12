@@ -32,16 +32,6 @@
 	}
 	
 	/**
-	 * 重定向到首页
-	 * @returns
-	 */
-	function redirectSearchIndex() {
-		$(".redirect-search-index").click(function(){
-			window.location.href="search-index.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
-		}) ;
-	}
-	
-	/**
 	 * 按照数组中的值，批量初始化隐藏域
 	 * @returns
 	 */

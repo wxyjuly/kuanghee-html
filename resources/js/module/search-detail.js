@@ -3,7 +3,7 @@
 	$(function() {	//page init
 		addKeyEnterPressBtn() ;
 		initParams() ;
-		redirectSearchIndex() ;
+		redirectURL() ;
 		loadArticleDetail() ;
 		initProfessionInfo(); 
 	});
@@ -147,10 +147,7 @@
 	 * 重定向到首页
 	 * @returns
 	 */
-	function redirectSearchIndex() {
-		$("#redirect-search-index").click(function(){
-			window.location.href="search-index.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
-		}) ;
+	function redirectURL() {
 		$("#profession-list").click(function(){
 			window.location.href="profession-list.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
 		}) ;

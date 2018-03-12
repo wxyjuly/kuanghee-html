@@ -1,6 +1,6 @@
 //var baseProjectPath = "/kuangkee-search" ;
 var baseProjectPath = "" ;
-var IMG_PRE_URL = "http://127.0.0.1:8080/kuangkee-search/resources/images/" ;	
+var IMG_PRE_URL = "http://search.wajiyisheng.com/resources" ;	
 
 
 //选择器类型
@@ -217,12 +217,20 @@ function checkIsLogin(userToken) {
 	return flag ;
 }
 
+/**
+ * 重定向到首页
+ * @returns
+ */
+function redirectSearchIndex() {
+	$(".redirect-search-index").click(function(){
+		window.location.href="search-index.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
+	}) ;
+}
 /*------common part end-------*/
 
 //init common part
 $(function() {
-	var userToken ;
-	checkIsLogin(userToken) ;
+	redirectSearchIndex() ; //
 	setHtmlUrlTimestamps() ; //add timestamp for all url
 }) ;
 
