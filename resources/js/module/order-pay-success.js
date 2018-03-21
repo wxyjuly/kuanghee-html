@@ -10,7 +10,9 @@
 	 */
 	function redirectToIndex() {
 		$(".to-index").click(function(){
-			window.location.href="search-index.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
+			window.location.href="search-index.html?version=2&uId="+getAttr(ID_TYPE,'uId') 
+								+"&lat="+getAttr(ID_TYPE,'lat')
+								+"&lng="+getAttr(ID_TYPE,'lng');
 		}) ;
 	}
 	
@@ -23,6 +25,8 @@
 		arrSelectorKeys[0] = "uId" ;
 		arrSelectorKeys[1] = "orderId" ;
 		arrSelectorKeys[2] = "phone" ;
+		arrSelectorKeys[3] = "lat" ;
+		arrSelectorKeys[4] = "lng" ;
 		renderHiddenParamsByArray(arrSelectorKeys, ID_TYPE) ;
 		var phone = getURLParamVal(arrSelectorKeys[2]);
 		if(isEmpty(phone)){

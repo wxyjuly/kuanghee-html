@@ -1,4 +1,3 @@
-
 	$(function() {	//page init
 		addKeyEnterPressBtn() ;
 		initParams() ;
@@ -20,7 +19,7 @@
 		var lng = $('#lng').val();
 		var lat = $('#lat').val();
 		
-		location.href = "search-list.html?version=1&"
+		location.href = "search-list.html?version=2&"
 				+"uId="
 				+ uId
 				+"&key="
@@ -198,10 +197,14 @@
 	 */
 	function redirectSearchIndex() {
 		$("#redirect-search-index").click(function(){
-			window.location.href="search-index.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
+			window.location.href="search-index.html?version=2&uId="+getAttr(ID_TYPE,'uId') 
+									+"&lat="+getAttr(ID_TYPE,'lat')
+									+"&lng="+getAttr(ID_TYPE,'lng');
 		}) ;
 		$("#profession-list").click(function(){
-			window.location.href="profession-list.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
+			window.location.href="profession-list.html?version=2&uId="+getAttr(ID_TYPE,'uId') 
+									+"&lat="+getAttr(ID_TYPE,'lat')
+									+"&lng="+getAttr(ID_TYPE,'lng');
 		}) ;
 	}
 	
@@ -279,6 +282,7 @@
 				showErrorFlag = true ;
 			}
 			bindSaveOrder() ;
+			renderDistance() ;
 		});
 	}
 	/**
@@ -295,6 +299,14 @@
 			data["uId"] = uId ;
 			data["pId"] = pId ;
 			
+			var urlProf = baseProjectPath+"/updateProf" ;
+			var dataProf = {} ;
+			dataProf["tokenId"] = uId ;
+			dataProf["id"] = pId ;
+			
+			//ajax profesion
+			$.post(urlProf, dataProf, function(dataProf){ });
+			
 			//ajax
 			$.post(url,data,function(data){
 				if(!isEmpty(data)
@@ -306,8 +318,10 @@
 					if (!isEmpty(beans)) {
 						var orderId = beans.id ;
 						var phone = beans.phone ;
-						window.location.href = "order-pay-success.html?version=1&uId=" 
-							+ uId + "&orderId=" + orderId +"&phone="+phone ;
+						window.location.href = "order-pay-success.html?version=2&uId=" 
+							+ uId + "&orderId=" + orderId +"&phone="+phone 
+							+"&lat="+getAttr(ID_TYPE,'lat')
+							+"&lng="+getAttr(ID_TYPE,'lng');
 					} else {
 						showErrorFlag = true ;
 					}
@@ -321,4 +335,6 @@
 			});
 		});
 	}
+	
+
 	

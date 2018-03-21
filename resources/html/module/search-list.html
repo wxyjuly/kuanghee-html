@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0130)http://www.fonang.com/app/index.php?i=26&c=entry&do=result&m=wx_search&thetitle=1&finallyclass=44&lng=113.85991703&lat=27.63954422 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>查询结果</title>
@@ -13,14 +12,15 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 
-<link rel="stylesheet" href="../../css/common/bootstrap.min.css?version=1">
-<link rel="stylesheet" href="../../css/module/search-list.css?version=1">
+<link rel="stylesheet" href="../../css/common/bootstrap.min.css?version=2">
+<link rel="stylesheet" href="../../css/module/search-list.css?version=2">
 
-<script type="text/javascript" src="../../js/common/jquery-1.11.1.min.js?version=1"></script>
-<script type="text/javascript" src="../../js/common/jsrender.min.js?version=1"></script>
+<script type="text/javascript" src="../../js/common/jquery-1.11.1.min.js?version=2"></script>
+<script type="text/javascript" src="../../js/common/jsrender.min.js?version=2"></script>
 
-<script type="text/javascript" src="../../js/common/common.js?version=1"></script>
-<script type="text/javascript" src="../../js/module/search-list.js?version=1"></script>
+<script type="text/javascript" src="../../js/common/common.js?version=2"></script>
+<script type="text/javascript" src="../../js/module/search-list.js?version=2"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nYNDSvyQbYA0NyWtVjhoRnIGcXNSGzhd"></script>
 
 </head>
 
@@ -143,7 +143,7 @@
 			<div class="professional-container-info-div">
 				已被预约次数 :<span>{{:cousultTimes}}次 </span>
 				<br> 
-				工程师距您约 : <span>404.54km</span>
+				工程师距您约 : <span class="pro-distance" lat={{:lat}} lng={{:lng}}>404.54km</span>
 			</div>
 		</div>
 		<div class="professional-container-info-phone">
@@ -153,15 +153,11 @@
 		</div>
 		<div style="clear: both;"></div>
 		<div class="professional-container-info-desc">
-			<p>{{:agencyShopName}}</p>
 			<p>{{:info}}</p>
+			<p>{{:agencyShopName}}</p>
+			<p>{{:address}}</p>
 		</div>
 	</div>
-{{/for}}
-</script>
-
-<script id="search-recommend" type="text/x-jsrender">
-{{for}}
 {{/for}}
 </script>
 

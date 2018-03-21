@@ -149,7 +149,9 @@
 	 */
 	function redirectURL() {
 		$("#profession-list").click(function(){
-			window.location.href="profession-list.html?version=1&uId="+getAttr(ID_TYPE,'uId') ;
+			window.location.href="profession-list.html?version=2&uId="+getAttr(ID_TYPE,'uId') 
+									+"&lat="+getAttr(ID_TYPE,'lat')
+									+"&lng="+getAttr(ID_TYPE,'lng');
 		}) ;
 		$(".error-flag").click(function(){
 			history.go(-1) ;
@@ -235,7 +237,7 @@
 					if (!isEmpty(beans)) {
 						var orderId = beans.id ;
 						var phone = beans.phone ;
-						window.location.href = "order-pay-success.html?version=1&uId=" 
+						window.location.href = "order-pay-success.html?version=2&uId=" 
 							+ uId + "&orderId=" + orderId +"&phone="+phone ;
 					} else {
 						showErrorFlag = true ;

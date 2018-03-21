@@ -38,6 +38,8 @@
 	function initParams() {
 		var arrSelectorKeys = new Array() ;
 		arrSelectorKeys[0] = "uId" ;
+		arrSelectorKeys[1] = "lat" ;
+		arrSelectorKeys[2] = "lng" ;
 		renderHiddenParamsByArray(arrSelectorKeys, ID_TYPE) ;
 	}
 	
@@ -72,6 +74,7 @@
 				showErrorFlag = true ;
 			}
 			bindSaveOrder() ;
+			renderDistance() ;
 		});
 	}
 	/**
@@ -100,7 +103,9 @@
 						var orderId = beans.id ;
 						var phone = beans.phone ;
 						window.location.href = "order-pay-success.html?uId=" 
-							+ uId + "&orderId=" + orderId +"&phone="+phone ;
+							+ uId + "&orderId=" + orderId +"&phone="+phone 
+							+"&lat="+getAttr(ID_TYPE,'lat')
+							+"&lng="+getAttr(ID_TYPE,'lng');
 					} else {
 						showErrorFlag = true ;
 					}

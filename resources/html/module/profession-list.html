@@ -12,19 +12,22 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 
-<link rel="stylesheet" href="../../css/common/bootstrap.min.css?version=1">
-<link rel="stylesheet" href="../../css/module/search-list.css?version=1">
+<link rel="stylesheet" href="../../css/common/bootstrap.min.css?version=2">
+<link rel="stylesheet" href="../../css/module/search-list.css?version=2">
 
-<script type="text/javascript" src="../../js/common/jquery-1.11.1.min.js?version=1"></script>
-<script type="text/javascript" src="../../js/common/jsrender.min.js?version=1"></script>
+<script type="text/javascript" src="../../js/common/jquery-1.11.1.min.js?version=2"></script>
+<script type="text/javascript" src="../../js/common/jsrender.min.js?version=2"></script>
 
-<script type="text/javascript" src="../../js/common/common.js?version=1"></script>
-<script type="text/javascript" src="../../js/module/profession-list.js?version=1"></script>
+<script type="text/javascript" src="../../js/common/common.js?version=2"></script>
+<script type="text/javascript" src="../../js/module/profession-list.js?version=2"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nYNDSvyQbYA0NyWtVjhoRnIGcXNSGzhd"></script>
 
 </head>
 
 <body>
 	<input type="hidden" id="uId" value="">
+	<input type="hidden" id="lat" value="">
+	<input type="hidden" id="lng" value="">
 	
 	<div class="container">
 		<a href="javascript:void(0);" class="redirect-search-index">
@@ -121,7 +124,7 @@
 			<div class="professional-container-info-div">
 				已被预约次数 :<span>{{:cousultTimes}}次 </span>
 				<br> 
-				工程师距您约 : <span>404.54km</span>
+				工程师距您约 : <span class="pro-distance" lat={{:lat}} lng={{:lng}}>404.54km</span>
 			</div>
 		</div>
 		<div class="professional-container-info-phone">
@@ -131,15 +134,11 @@
 		</div>
 		<div style="clear: both;"></div>
 		<div class="professional-container-info-desc">
-			<p>{{:agencyShopName}}</p>
 			<p>{{:info}}</p>
+			<p>{{:agencyShopName}}</p>
+			<p>{{:address}}</p>
 		</div>
 	</div>
-{{/for}}
-</script>
-
-<script id="search-recommend" type="text/x-jsrender">
-{{for}}
 {{/for}}
 </script>
 
