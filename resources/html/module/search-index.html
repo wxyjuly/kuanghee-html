@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0073)http://www.fonang.com/app/index.php?i=26&c=entry&eid=1094#wechat_redirect -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>查询</title>
@@ -25,9 +24,25 @@
 	<div class="container" style="text-align: center;">
 		<img id="searchimg" src="http://search.wajiyisheng.com/resources/img/common/logo.png" style="margin: 10% auto 5%; width: 50%; height: 1rem;">
 	</div>
-	<!-- search text，搜索文本框 -->
-	<div class="center-block search-context-block">
+	<!-- search text，普通搜索文本框 -->
+	<div class="center-block search-context-block" >
 		<input class="search-context-input"	type="text" name="title" placeholder="请输入故障代码或关键字" value="">
+		<span class="search-context-btn" onclick="subRedirect()">
+			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
+		</span>
+	</div>
+	
+	<!-- search text，卡特搜索文本框 -->
+	<div class="center-block search-context-block-cater" style="display:none;">
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"	
+			type="text" name="title1" placeholder="part1" value="">
+		
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
+			type="text" name="title2" placeholder="part2" value="">
+		
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
+			type="text" name="title3" placeholder="part3" value="">
+		
 		<span class="search-context-btn" onclick="subRedirect()">
 			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
 		</span>

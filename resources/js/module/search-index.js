@@ -71,7 +71,21 @@
 			//setter cur brandId,brandName
 			$("#bId").val(brandId) ;
 			$("#bName").val(brandName) ;
+			
+//			alert(brandId+"->"+brandName) ;
+			showOrHiddenInputText(brandId, brandName) ;
 		});
+		
+	}
+	
+	function showOrHiddenInputText(brandId, brandName) { 
+		if(brandId=='2' || brandName=='卡特'){
+			$('.search-context-block-cater').show();
+			$('.search-context-block').hide();
+		} else {
+			$('.search-context-block-cater').hide();
+			$('.search-context-block').show();
+		}
 		
 	}
 	

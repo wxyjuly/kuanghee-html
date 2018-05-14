@@ -262,10 +262,15 @@ function renderDistance(){
 }
 
 function getDistance(lat1,lng1, lat2, lng2){
-	var map = new BMap.Map("");
-	var pointA = new BMap.Point(lat1,lng1);  // 创建点坐标A--大渡口区
-	var pointB = new BMap.Point(lat2,lng2);  // 创建点坐标B--江北区
-	var distance = (map.getDistance(pointA,pointB)/1000).toFixed(2) ;
+	var distance
+	try{
+		var map = new BMap.Map("");
+		var pointA = new BMap.Point(lat1,lng1);  // 创建点坐标A--大渡口区
+		var pointB = new BMap.Point(lat2,lng2);  // 创建点坐标B--江北区
+		distance = (map.getDistance(pointA,pointB)/1000).toFixed(2) ;
+	} catch(e){
+		
+	}
 //	alert('从大渡口区到江北区的距离是：'+distance+' 米。');  //获取两点距离,保留小数点后两位
 	return distance ;
 }
