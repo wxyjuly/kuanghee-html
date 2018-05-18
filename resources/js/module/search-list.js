@@ -1,3 +1,5 @@
+	var inputSpliter = '$$';
+
 	$(function() {	//page init
 		addKeyEnterPressBtn() ;
 		initParams() ;
@@ -5,7 +7,6 @@
 		sub(2) ; //初始化提交搜索
 		initProfessionInfo(); 
 		initBrand() ;
-		
 	});
 	
 	function subRedirect() {
@@ -17,7 +18,6 @@
 			var caterInput1 ;
 			var caterInput2 ;
 			var caterInput3 ;
-			var inputSpliter = '$$';
 			caterInput1 = $("#cater-input1").val();
 			caterInput2 = $("#cater-input2").val();
 			caterInput3 = $("#cater-input3").val();
@@ -78,25 +78,24 @@
 				var caterInput1 ;
 				var caterInput2 ;
 				var caterInput3 ;
-				var inputSpliter = '$$';
 				caterInput1 = $("#cater-input1").val();
 				caterInput2 = $("#cater-input2").val();
 				caterInput3 = $("#cater-input3").val();
 				if (isEmpty(caterInput1)) {
-					alert('请先输入[卡特]1');
+					alert('请先输入[卡特]-MID');
 					return false;
 				}
 				if (isEmpty(caterInput2)) {
-					alert('请先输入[卡特]2');
+					alert('请先输入[卡特]-CID');
 					return false;
 				}
 				if (isEmpty(caterInput3)) {
-					alert('请先输入[卡特]3');
+					alert('请先输入[卡特]-FMI');
 					return false;
 				}
-				key = caterInput1 + inputSpliter 
-					+ caterInput2 + inputSpliter
-					+ caterInput3 ;
+				key = caterInput1.split("\:")[1] + inputSpliter 
+					+ caterInput2.split("\:")[1] + inputSpliter
+					+ caterInput3.split("\:")[1] ;
 				
 			} else {
 				key = $(".search-context-input").val();
@@ -139,7 +138,16 @@
 				var searchType = data.data.searchStatus ;
 				if (!isEmpty(beans)) {
 					var htmlOutput ;
-					var template = $.templates("#search-success-errorcode-match-js");
+					var bId = $("#bId").val() ;
+					var bName = $("#bName").val() ;
+					
+					var template = "" ;
+					if(bName=='卡特' || bId=='2'){
+						template = $.templates("#cater-search-success-errorcode-match-js");
+					} else {
+						template = $.templates("#search-success-errorcode-match-js");
+					}
+					
 					htmlOutput = template.render(beans);
 					$("#search-success-errorcode-match-div").html(htmlOutput);
 					setAppendLocationParams(); //所有href添加对应参数
@@ -296,10 +304,44 @@
 		renderHiddenParamsByArray(arrSelectorKeys, ID_TYPE) ;
 		
 		var addrVal = getURLParamVal(arrSelectorKeys[1]);
+		var bId = getURLParamVal(arrSelectorKeys[2]);
+		var bName = getURLParamVal(arrSelectorKeys[3]);
 		if(isEmpty(addrVal)){
 			return ;
 		}
-		$(".search-context-input").val(addrVal); //初始化输入框
+		if(isEmpty(bId)){
+			return ;
+		}
+		if(isEmpty(bName)){
+			return ;
+		}
+		if(bId==2 || bName=='卡特') {
+			if(addrVal.indexOf(inputSpliter)) {
+				var data = addrVal.split(inputSpliter) ;
+				
+				var mid = data[0] ;
+				var cid = data[1] ;
+				var fmi = data[2] ;
+				
+				if(mid.indexOf("MID")==-1) {
+					mid = "MID:" + mid ;
+				}
+				if(cid.indexOf("CID")==-1) {
+					cid = "CID:" + cid ;
+				}
+				if(fmi.indexOf("FMI")==-1) {
+					fmi = "FMI:" + fmi ;
+				}
+				
+				$("#cater-input1").val(mid) ;
+				$("#cater-input2").val(cid) ;
+				$("#cater-input3").val(fmi) ;
+			}
+			showOrHiddenInputText(2, '卡特') ;
+		} else {
+			$(".search-context-input").val(addrVal); //初始化输入框
+			showOrHiddenInputText('', '') ;
+		}
 	}
 	
 	function initProfessionInfo() {

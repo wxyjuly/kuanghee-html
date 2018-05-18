@@ -51,6 +51,22 @@
 		</span>
 	</div>
 	
+	<!-- search text，卡特搜索文本框 -->
+	<div class="center-block search-context-block-cater" style="display:none;">
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"	
+			id="cater-input1" type="text" name="title1" placeholder="MID" value="MID:">
+		
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
+			id="cater-input2" type="text" name="title2" placeholder="CID" value="CID:">
+		
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
+			id="cater-input3" type="text" name="title3" placeholder="FMI" value="FMI:">
+		
+		<span class="search-context-btn" onclick="subRedirect()">
+			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
+		</span>
+	</div>
+	
 	<div class="container" style="text-align: center;">
 		<div class="container-line">───&nbsp;&nbsp;请选择品牌&nbsp;&nbsp;───</div>
 		
@@ -62,22 +78,6 @@
 		</div>
 	</div>
 	<br>
-	
-	<!-- search text，卡特搜索文本框 -->
-	<div class="center-block search-context-block-cater" style="display:none;">
-		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"	
-			id="cater-input1" type="text" name="title1" placeholder="part1" value="">
-		
-		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
-			id="cater-input2" type="text" name="title2" placeholder="part2" value="">
-		
-		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
-			id="cater-input3" type="text" name="title3" placeholder="part3" value="">
-		
-		<span class="search-context-btn" onclick="subRedirect()">
-			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
-		</span>
-	</div>
 	
 	<!-- search have result -->
 	<div class="container success-flag" id="search-success-errorcode-match-div">
@@ -123,6 +123,7 @@
 	{{/for}}	
 </script>
 
+<!-- non cater brand-->
 <script id="search-success-errorcode-match-js" type="text/x-jsrender">
 {{for}}
 	{{if #getIndex() == 0}}
@@ -161,6 +162,47 @@
 		</a>
 	</div>
 {{/for}}
+</script>
+
+
+<!-- cater brand-->
+<script id="cater-search-success-errorcode-match-js" type="text/x-jsrender">
+	<div class="container-search-success-brand"></div>
+	<div class="container-search-success-brand-line"></div>
+  	<td class="mainTaskName_cell"></td>
+	<a href="search-detail.html?articleId={{:articleId}}">
+		<div class="container-search-success-result-img-div">
+
+		<!--<img src="http://search.wajiyisheng.com/resources/images/small/{{:imgSearchSmall}}">-->
+		<div class="row" >
+            <div class="col-xs-4 border">
+				<img src="http://search.wajiyisheng.com/resources/img/common/tools.png" style="width: 100%; height: 100%"/>
+            </div>
+            <div class="col-xs-8 border">
+			{{for}}
+                <div class="row">
+                    <div class="col-xs-12 padding-0-0 border">
+                        <span class="result-title">【{{:errorCode}}】</span>
+                    </div>
+                    <div class="col-xs-12 padding-0-0 border">
+                        <span class="result-desc">{{:title}}</span>
+                    </div>
+                </div>
+			{{/for}}
+            </div>
+        </div>
+		</div>
+	</a>
+	<div class="container-search-success-result-div">
+		<a href="search-detail.html?articleId={{:articleId}}">
+			<div>
+				<span style="color: black;">&nbsp;&nbsp;参看故障排除方法&nbsp;&nbsp;请教专家&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<img src="http://search.wajiyisheng.com/resources/img/common/turn.png">
+				<span style="color: #f05a28; font-size: 0.7rem;">戳我&nbsp;</span>
+			</div>
+		</a>
+	</div>
+
 </script>
 
 <script id="profession-div-content-script" type="text/x-jsrender">
