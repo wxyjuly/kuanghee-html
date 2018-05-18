@@ -4,18 +4,50 @@
 		redirectSearchIndex() ;
 		sub(2) ; //初始化提交搜索
 		initProfessionInfo(); 
+		initBrand() ;
 		
 	});
 	
 	function subRedirect() {
-		var key = $(".search-context-input").val();
-		if (isEmpty(key)) {
-			alert('请先输入搜索内容');
-			return false;
-		}
-		var uId= $('#uId').val() ;
+		
 		var bId = $('#bId').val();
 		var bName = $('#bName').val();
+		var key = "";
+		if(bId=='2' || bName=='卡特'){
+			var caterInput1 ;
+			var caterInput2 ;
+			var caterInput3 ;
+			var inputSpliter = '$$';
+			caterInput1 = $("#cater-input1").val();
+			caterInput2 = $("#cater-input2").val();
+			caterInput3 = $("#cater-input3").val();
+			
+			if (isEmpty(caterInput1)) {
+				alert('请先输入[卡特]1');
+				return false;
+			}
+			if (isEmpty(caterInput2)) {
+				alert('请先输入[卡特]2');
+				return false;
+			}
+			if (isEmpty(caterInput3)) {
+				alert('请先输入[卡特]3');
+				return false;
+			}
+			
+			key = caterInput1 + inputSpliter 
+				+ caterInput2 + inputSpliter
+				+ caterInput3 ;
+			
+		} else {
+			key = $(".search-context-input").val();
+			if (isEmpty(key)) {
+				alert('请先输入搜索内容');
+				return false;
+			}
+			
+		}
+		var uId= $('#uId').val() ;
 		var lng = $('#lng').val();
 		var lat = $('#lat').val();
 		
@@ -31,25 +63,60 @@
 				+ "&lng="
 				+ lng 
 				+ "&lat=" 
-				+ lat;
+				+ lat
+				+ "&from=" 
+				+ $('#from').val();
 	}
 	
 	function sub(type) {
 		var key ;
+		var bId = $('#bId').val();
+		var bName = $('#bName').val();
+		
 		if(1==type) {
-			key = $(".search-context-input").val();
-		} else {
+			if(bId=='2' || bName=='卡特'){
+				var caterInput1 ;
+				var caterInput2 ;
+				var caterInput3 ;
+				var inputSpliter = '$$';
+				caterInput1 = $("#cater-input1").val();
+				caterInput2 = $("#cater-input2").val();
+				caterInput3 = $("#cater-input3").val();
+				if (isEmpty(caterInput1)) {
+					alert('请先输入[卡特]1');
+					return false;
+				}
+				if (isEmpty(caterInput2)) {
+					alert('请先输入[卡特]2');
+					return false;
+				}
+				if (isEmpty(caterInput3)) {
+					alert('请先输入[卡特]3');
+					return false;
+				}
+				key = caterInput1 + inputSpliter 
+					+ caterInput2 + inputSpliter
+					+ caterInput3 ;
+				
+			} else {
+				key = $(".search-context-input").val();
+				if (isEmpty(key)) {
+					alert('请先输入搜索内容');
+					return false;
+				}
+			}
+		} else { //搜索中跳转数据
 			key = $("#key").val();
 		}
+		
 		if (isEmpty(key)) {
 			alert('请先输入搜索内容');
 			return false;
 		}
 		var uId = $('#uId').val();
-		var bId = $('#bId').val();
-		var bName = $('#bName').val();
 		var lng = $('#lng').val();
 		var lat = $('#lat').val();
+		var from = $('#from').val() ;
 		
 		//ajax 查询数据
 		var url = baseProjectPath+"/query" ;
@@ -60,6 +127,7 @@
 		data["brandName"] = bName ;
 		data["longitude"] = lng ;
 		data["latitude"] = lat ;
+		data["from"] = from ;
 		
 		//ajax
 		$.post(url,data,function(data){
@@ -103,6 +171,7 @@
 		arrSelectorKeys[2] = "bName" ;
 		arrSelectorKeys[3] = "lng" ;
 		arrSelectorKeys[4] = "lat" ;
+		arrSelectorKeys[5] = "from" ;
 		renderLocationParamsByArray(arrSelectorKeys, ID_TYPE) ;
 	}
 	
@@ -198,13 +267,16 @@
 	function redirectSearchIndex() {
 		$(".redirect-search-index").click(function(){
 			window.location.href="search-index.html?version=2&uId="+getAttr(ID_TYPE,'uId') 
-									+"&lat="+getAttr(ID_TYPE,'lat')
-									+"&lng="+getAttr(ID_TYPE,'lng');
+									+ "&lat=" + getAttr(ID_TYPE,'lat')
+									+ "&lng=" + getAttr(ID_TYPE,'lng')
+									+ "&from=" + getAttr(ID_TYPE,'from') ;
 		}) ;
+		
 		$("#profession-list").click(function(){
 			window.location.href="profession-list.html?version=2&uId="+getAttr(ID_TYPE,'uId') 
-									+"&lat="+getAttr(ID_TYPE,'lat')
-									+"&lng="+getAttr(ID_TYPE,'lng');
+									+ "&lat=" + getAttr(ID_TYPE,'lat')
+									+ "&lng=" + getAttr(ID_TYPE,'lng')
+									+ "&from=" + getAttr(ID_TYPE,'from') ;
 		}) ;
 	}
 	
@@ -220,6 +292,7 @@
 		arrSelectorKeys[3] = "bName" ;
 		arrSelectorKeys[4] = "lng" ;
 		arrSelectorKeys[5] = "lat" ;
+		arrSelectorKeys[6] = "from" ;
 		renderHiddenParamsByArray(arrSelectorKeys, ID_TYPE) ;
 		
 		var addrVal = getURLParamVal(arrSelectorKeys[1]);
@@ -228,24 +301,6 @@
 		}
 		$(".search-context-input").val(addrVal); //初始化输入框
 	}
-	
-	function brandInitAndChange(){
-		//init first
-		//change brand cells
-		$(".container-brand-outter-div").click(function(){
-			var curBrandDiv = $(this);
-			curBrandDiv.addClass('active').siblings().removeClass('active');
-			curBrandDiv.children('span').show().siblings().hide();
-			
-			var brandId = curBrandDiv.attr("brand_id");
-			var brandName = curBrandDiv.attr("brand_name");
-			
-			//setter cur brandId,brandName
-			$("#bId").val(brandId) ;
-			$("#bName").val(brandName) ;
-		});
-	}
-	
 	
 	function initProfessionInfo() {
 		var uId = $('#uId').val();
@@ -320,8 +375,9 @@
 						var phone = beans.phone ;
 						window.location.href = "order-pay-success.html?version=2&uId=" 
 							+ uId + "&orderId=" + orderId +"&phone="+phone 
-							+"&lat="+getAttr(ID_TYPE,'lat')
-							+"&lng="+getAttr(ID_TYPE,'lng');
+							+ "&lat=" + getAttr(ID_TYPE,'lat')
+							+ "&lng=" + getAttr(ID_TYPE,'lng')
+							+ "&from=" + getAttr(ID_TYPE,'from') ;
 					} else {
 						showErrorFlag = true ;
 					}
@@ -336,5 +392,78 @@
 		});
 	}
 	
-
+	function initBrand() {
+		//ajax 查询数据
+		var url = baseProjectPath+"/qryAllBrands" ;
+		//ajax
+		$.post(url,"",function(data){
+			if(!isEmpty(data)
+					&&('000000'==data.status||'0'==data.status) 
+					&& !isEmpty(data.data)) { //成功，显示
+				var showErrorFlag = false ;
+				var beans = data.data ; 
+				if (!isEmpty(beans)) {
+					var htmlOutput ;
+					var template = $.templates("#brand-list-render");
+					htmlOutput = template.render(beans);
+					$("#brand-list").html(htmlOutput);
+					selectedBrand() ; // select brand
+					
+				} else {
+					showErrorFlag = true ;
+				}
+				
+			} else { //error，给提示
+				showErrorFlag = true ;
+			}
+			brandInitAndChange() ; 
+		});
+	}
+	
+	function brandInitAndChange(){
+		//init first
+		//change brand cells
+		$(".container-brand-outter-div").click(function(){
+			var curBrandDiv = $(this);
+			curBrandDiv.addClass('active').siblings().removeClass('active');
+			curBrandDiv.children('span').show().siblings().hide() ;
+			
+			var brandId = curBrandDiv.attr("brand_id");
+			var brandName = curBrandDiv.attr("brand_name");
+			
+			//setter cur brandId,brandName
+			$("#bId").val(brandId) ;
+			$("#bName").val(brandName) ;
+			
+//			alert(brandId+"->"+brandName) ;
+			showOrHiddenInputText(brandId, brandName) ;
+		});
+		
+	}
+	
+	function showOrHiddenInputText(brandId, brandName) { 
+		if(brandId=='2' || brandName=='卡特'){
+			$('.search-context-block-cater').show();
+			$('.search-context-block').hide();
+		} else {
+			$('.search-context-block-cater').hide();
+			$('.search-context-block').show();
+		}
+	}
+	
+	function selectedBrand(){
+		$('.container-brand-outter-div').each(function(index){
+			var curElem = $(this) ;
+			var curBId = curElem.attr('brand_id');
+			var curBName = curElem.attr('brand_name') ;
+			
+			var choosenBId = $("#bId").val() ;
+			var choosenBName = $("#bName").val() ;
+			
+			if(curBId==choosenBId 
+					|| curBName==choosenBName){
+				curElem.addClass('active') ;
+			}
+		}) ;
+	}
 	

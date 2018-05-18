@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>查询结果</title>
+<title>商品查询结果</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,7 +23,7 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nYNDSvyQbYA0NyWtVjhoRnIGcXNSGzhd"></script>
 
 </head>
-
+ 
 <body>
 	<input type="hidden" id="uId" value="">
 	<input type="hidden" id="key" value="">
@@ -34,10 +34,12 @@
 	<!-- 纬度 -->
 	<input type="hidden" id="lat" value="">
 	
+	<input type="hidden" id="from" value="">
+	
 	<div class="container">
 		<a href="javascript:void(0);" class="redirect-search-index">
 			<img class="center-block" id="searchimg" src="http://search.wajiyisheng.com/resources/img/common/logo.png" 
-						style="margin: 10% auto 5%; width: 50%; height: 1rem;">
+				 style="margin: 10% auto 5%; width: 50%; height: 1rem;">
 		</a>
 	</div>
 	
@@ -48,7 +50,34 @@
 			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
 		</span>
 	</div>
+	
+	<div class="container" style="text-align: center;">
+		<div class="container-line">───&nbsp;&nbsp;请选择品牌&nbsp;&nbsp;───</div>
+		
+		<div class="row" id="brand-list">
+		</div>
+		
+		<div onclick="subRedirect()" class="center-block container-search-btn">
+			查询
+		</div>
+	</div>
 	<br>
+	
+	<!-- search text，卡特搜索文本框 -->
+	<div class="center-block search-context-block-cater" style="display:none;">
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"	
+			id="cater-input1" type="text" name="title1" placeholder="part1" value="">
+		
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
+			id="cater-input2" type="text" name="title2" placeholder="part2" value="">
+		
+		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
+			id="cater-input3" type="text" name="title3" placeholder="part3" value="">
+		
+		<span class="search-context-btn" onclick="subRedirect()">
+			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
+		</span>
+	</div>
 	
 	<!-- search have result -->
 	<div class="container success-flag" id="search-success-errorcode-match-div">
@@ -79,6 +108,20 @@
 <div class="caseud error-code-style" id="profession-list" now="1" num="2">
     <a href="javascript:void(0);">--更多专家>>>>--</a>    
 </div>
+
+<!-- brand init -->
+<script id="brand-list-render" type="text/x-jsrender">
+	{{for}}
+		<div class="col-xs-3 d0 container-brand-outter-div" rel="{{:id}}" brand_id="{{:id}}" brand_name="{{:name}}">
+			<div class="container-brand-inner-div" >
+				{{:name}}
+				<span class="container-brand-inner-span">
+					<img src="http://search.wajiyisheng.com/resources/img/module/ico-select.png" class="container-brand-inner-span-img">
+				</span>
+			</div>
+		</div>
+	{{/for}}	
+</script>
 
 <script id="search-success-errorcode-match-js" type="text/x-jsrender">
 {{for}}
@@ -119,8 +162,6 @@
 	</div>
 {{/for}}
 </script>
-
-
 
 <script id="profession-div-content-script" type="text/x-jsrender">
 {{for}}

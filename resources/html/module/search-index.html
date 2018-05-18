@@ -35,13 +35,13 @@
 	<!-- search text，卡特搜索文本框 -->
 	<div class="center-block search-context-block-cater" style="display:none;">
 		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"	
-			type="text" name="title1" placeholder="part1" value="">
+			id="cater-input1" type="text" name="title1" placeholder="part1" value="">
 		
 		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
-			type="text" name="title2" placeholder="part2" value="">
+			id="cater-input2" type="text" name="title2" placeholder="part2" value="">
 		
 		<input style="width: 29%; border: 0; float: left;	color: black; padding-left: 3%;	font-size: 0.6rem; height: 1.6rem; float: left; line-height: 1.6rem;"
-			type="text" name="title3" placeholder="part3" value="">
+			id="cater-input3" type="text" name="title3" placeholder="part3" value="">
 		
 		<span class="search-context-btn" onclick="subRedirect()">
 			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
@@ -65,6 +65,7 @@
 	<input type="hidden" id="lng" value="">
 	<!-- 纬度 -->
 	<input type="hidden" id="lat" value="">
+	<input type="hidden" id="from" value="">
 
 	<script id="brand-list-render" type="text/x-jsrender">
 	{{for}}

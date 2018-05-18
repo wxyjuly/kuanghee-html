@@ -8,8 +8,17 @@ body {
 	"font-family: &amp; #39;Microsoft Yahei&amp;#39;,&amp;#39;微软雅黑&amp;#39;,Arial,&amp;#39;Hiragino Sans GB&amp;#39;,&amp;#39;宋体&amp;#39;,&amp;#39;Helvetica Neue&amp;#39;,Helvetica,sans-serif;"
 }
 
-.active div {
+/* .active div {
 	border: 2px solid #7A67EE !important;
+} */
+
+.active div {
+	border: 1px solid #2a378f !important;
+	color: #2a378f !important;
+}
+
+.active span { /* brand choose */
+	display: block !important;
 }
 
 a {
