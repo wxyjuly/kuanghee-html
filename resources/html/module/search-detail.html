@@ -76,7 +76,14 @@
 -->
      <div style="width: 100%;color: gray;">
 		<p>
-       		{{:content}}
+			{{if title!=null}}
+       			{{:title}}
+			{{/if}}
+       	</p>
+		<p>
+			{{if content!=null}}
+       			{{:content}}
+			{{/if}}
        	</p>
      </div>
 </script>

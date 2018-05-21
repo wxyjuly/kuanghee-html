@@ -98,7 +98,6 @@
 						template = $.templates("#search-success-errorcode-match-js");
 						htmlOutput = template.render(beans);
 						$("#search-success-errorcode-match-div").html(htmlOutput);
-						
 					}
 					
 					setAppendLocationParams(); //所有href添加对应参数
