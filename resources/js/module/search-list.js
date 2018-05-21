@@ -10,62 +10,7 @@
 	});
 	
 	function subRedirect() {
-		
-		var bId = $('#bId').val();
-		var bName = $('#bName').val();
-		var key = "";
-		if(bId=='2' || bName=='卡特'){
-			var caterInput1 ;
-			var caterInput2 ;
-			var caterInput3 ;
-			caterInput1 = $("#cater-input1").val();
-			caterInput2 = $("#cater-input2").val();
-			caterInput3 = $("#cater-input3").val();
-			
-			if (isEmpty(caterInput1)) {
-				alert('请先输入[卡特]1');
-				return false;
-			}
-			if (isEmpty(caterInput2)) {
-				alert('请先输入[卡特]2');
-				return false;
-			}
-			if (isEmpty(caterInput3)) {
-				alert('请先输入[卡特]3');
-				return false;
-			}
-			
-			key = caterInput1 + inputSpliter 
-				+ caterInput2 + inputSpliter
-				+ caterInput3 ;
-			
-		} else {
-			key = $(".search-context-input").val();
-			if (isEmpty(key)) {
-				alert('请先输入搜索内容');
-				return false;
-			}
-			
-		}
-		var uId= $('#uId').val() ;
-		var lng = $('#lng').val();
-		var lat = $('#lat').val();
-		
-		location.href = "search-list.html?version=2&"
-				+"uId="
-				+ uId
-				+"&key="
-				+ key
-				+ "&bId="
-				+ bId
-				+ "&bName="
-				+ bName
-				+ "&lng="
-				+ lng 
-				+ "&lat=" 
-				+ lat
-				+ "&from=" 
-				+ $('#from').val();
+		sub(1) ;
 	}
 	
 	function sub(type) {
@@ -143,13 +88,19 @@
 					
 					var template = "" ;
 					if(bName=='卡特' || bId=='2'){
+						showBrandSuccessDiv(bId, bName) ;
 						template = $.templates("#cater-search-success-errorcode-match-js");
+						htmlOutput = template.render(beans);
+						$("#cater-search-success-errorcode-match-div").html(htmlOutput);
+						
 					} else {
+						showBrandSuccessDiv(bId, bName) ;
 						template = $.templates("#search-success-errorcode-match-js");
+						htmlOutput = template.render(beans);
+						$("#search-success-errorcode-match-div").html(htmlOutput);
+						
 					}
 					
-					htmlOutput = template.render(beans);
-					$("#search-success-errorcode-match-div").html(htmlOutput);
 					setAppendLocationParams(); //所有href添加对应参数
 					$(".container-search-success-brand").html($('#bName').val()) ;
 					showDivByResult("success-flag") ;
@@ -196,6 +147,23 @@
 		} else if("success-flag"==param) {
 			$(".success-flag").show() ;
 			$(".error-flag").hide() ;	
+		}
+	}
+	
+	/**
+	 * 显示域
+	 * @param param
+	 * @returns
+	 */
+	function showBrandSuccessDiv(bId, bName){
+		if("2"==bId || "卡特"==bName){
+			$(".cater-container").show() ;
+			$(".other-container").hide() ;
+			
+		} else {
+			$(".cater-container").hide() ;
+			$(".other-container").show() ;
+			
 		}
 	}
 	

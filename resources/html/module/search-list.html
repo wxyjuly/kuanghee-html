@@ -38,16 +38,20 @@
 	
 	<div class="container">
 		<a href="javascript:void(0);" class="redirect-search-index">
-			<img class="center-block" id="searchimg" src="http://search.wajiyisheng.com/resources/img/common/logo.png" 
+			<img class="center-block" id="searchimg" 
+				 src="http://search.wajiyisheng.com/resources/img/common/logo.png" 
 				 style="margin: 10% auto 5%; width: 50%; height: 1rem;">
 		</a>
 	</div>
 	
 	<!-- search text，搜索文本框 -->
 	<div class="center-block search-context-block">
-		<input class="search-context-input"	type="text" name="title" placeholder="请输入故障代码或关键字" value="">
+		<input class="search-context-input"	type="text" 
+			   name="title" placeholder="请输入故障代码或关键字" value="">
+			   
 		<span class="search-context-btn" onclick="subRedirect()">
-			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
+			<img class="search-context-img" 
+				 src="http://search.wajiyisheng.com/resources/img/common/search.png">
 		</span>
 	</div>
 	
@@ -63,7 +67,8 @@
 			id="cater-input3" type="text" name="title3" placeholder="FMI" value="FMI:">
 		
 		<span class="search-context-btn" onclick="subRedirect()">
-			<img class="search-context-img" src="http://search.wajiyisheng.com/resources/img/common/search.png">
+			<img class="search-context-img" 
+				 src="http://search.wajiyisheng.com/resources/img/common/search.png">
 		</span>
 	</div>
 	
@@ -80,7 +85,29 @@
 	<br>
 	
 	<!-- search have result -->
-	<div class="container success-flag" id="search-success-errorcode-match-div">
+	<div class="container success-flag other-container" id="search-success-errorcode-match-div">
+	
+	</div>
+	
+	<div class="container success-flag cater-container" >
+			<div class="cater container-search-success-brand">卡特</div>
+			<div class="container-search-success-brand-line"></div>
+		  	<td class="mainTaskName_cell"/>
+			<a href="search-detail.html?articleId={{:articleId}}">
+				<div class="container-search-success-result-img-div">
+					<div class="row" >
+			            <div class="col-xs-4 border">
+							<img src="http://search.wajiyisheng.com/resources/img/common/tools.png" 
+								 style="width: 100%; height: 100%"/>
+			            </div>
+			            <div class="col-xs-8 border">
+			                <div class="row" id="cater-search-success-errorcode-match-div">
+							
+			                </div>
+			            </div>
+			        </div>
+				</div>
+			</a>
 	</div>
 	<br>
 	
@@ -167,19 +194,7 @@
 
 <!-- cater brand-->
 <script id="cater-search-success-errorcode-match-js" type="text/x-jsrender">
-	<div class="container-search-success-brand"></div>
-	<div class="container-search-success-brand-line"></div>
-  	<td class="mainTaskName_cell"></td>
-	<a href="search-detail.html?articleId={{:articleId}}">
-		<div class="container-search-success-result-img-div">
-
-		<!--<img src="http://search.wajiyisheng.com/resources/images/small/{{:imgSearchSmall}}">-->
-		<div class="row" >
-            <div class="col-xs-4 border">
-				<img src="http://search.wajiyisheng.com/resources/img/common/tools.png" style="width: 100%; height: 100%"/>
-            </div>
             <div class="col-xs-8 border">
-			{{for}}
                 <div class="row">
                     <div class="col-xs-12 padding-0-0 border">
                         <span class="result-title">【{{:errorCode}}】</span>
@@ -188,21 +203,7 @@
                         <span class="result-desc">{{:title}}</span>
                     </div>
                 </div>
-			{{/for}}
             </div>
-        </div>
-		</div>
-	</a>
-	<div class="container-search-success-result-div">
-		<a href="search-detail.html?articleId={{:articleId}}">
-			<div>
-				<span style="color: black;">&nbsp;&nbsp;参看故障排除方法&nbsp;&nbsp;请教专家&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-				<img src="http://search.wajiyisheng.com/resources/img/common/turn.png">
-				<span style="color: #f05a28; font-size: 0.7rem;">戳我&nbsp;</span>
-			</div>
-		</a>
-	</div>
-
 </script>
 
 <script id="profession-div-content-script" type="text/x-jsrender">
