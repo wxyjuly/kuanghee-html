@@ -4,7 +4,7 @@
 		addKeyEnterPressBtn() ;
 		initParams() ;
 		redirectSearchIndex() ;
-		sub(2) ; //初始化提交搜索
+		
 		initProfessionInfo(); 
 		initBrand() ;
 	});
@@ -275,6 +275,8 @@
 		var bName = getURLParamVal(arrSelectorKeys[3]);
 		if(isEmpty(addrVal)){
 			return ;
+		} else {
+			sub(2) ; //初始化包含搜索条件提交搜索
 		}
 		if(isEmpty(bId)){
 			return ;
