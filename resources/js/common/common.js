@@ -223,7 +223,7 @@ function checkIsLogin(userToken) {
  */
 function redirectSearchIndex() {
 	$(".redirect-search-index").click(function(){
-		window.location.href="search-list.html?version=2&uId="+getAttr(ID_TYPE,'uId')
+		window.location.href="search-list.html?version=3&uId="+getAttr(ID_TYPE,'uId')
 							+"&lat="+getAttr(ID_TYPE,'lat')
 							+"&lng="+getAttr(ID_TYPE,'lng');
 	}) ;

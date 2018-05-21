@@ -88,13 +88,17 @@
 					
 					var template = "" ;
 					if(bName=='卡特' || bId=='2'){
-						showBrandSuccessDiv(bId, bName) ;
+						
+						showBrandSuccessDiv(bId, bName) ;// brand-data
+						
 						template = $.templates("#cater-search-success-errorcode-match-js");
 						htmlOutput = template.render(beans);
 						$("#cater-search-success-errorcode-match-div").html(htmlOutput);
 						
 					} else {
-						showBrandSuccessDiv(bId, bName) ;
+						
+						showBrandSuccessDiv(bId, bName) ; // brand-data
+						
 						template = $.templates("#search-success-errorcode-match-js");
 						htmlOutput = template.render(beans);
 						$("#search-success-errorcode-match-div").html(htmlOutput);
@@ -241,14 +245,14 @@
 	 */
 	function redirectSearchIndex() {
 		$(".redirect-search-index").click(function(){
-			window.location.href="search-list.html?version=2&uId="+getAttr(ID_TYPE,'uId') 
+			window.location.href="search-list.html?version=3&uId="+getAttr(ID_TYPE,'uId') 
 									+ "&lat=" + getAttr(ID_TYPE,'lat')
 									+ "&lng=" + getAttr(ID_TYPE,'lng')
 									+ "&from=" + getAttr(ID_TYPE,'from') ;
 		}) ;
 		
 		$("#profession-list").click(function(){
-			window.location.href="profession-list.html?version=2&uId="+getAttr(ID_TYPE,'uId') 
+			window.location.href="profession-list.html?version=3&uId="+getAttr(ID_TYPE,'uId') 
 									+ "&lat=" + getAttr(ID_TYPE,'lat')
 									+ "&lng=" + getAttr(ID_TYPE,'lng')
 									+ "&from=" + getAttr(ID_TYPE,'from') ;
@@ -384,7 +388,7 @@
 					if (!isEmpty(beans)) {
 						var orderId = beans.id ;
 						var phone = beans.phone ;
-						window.location.href = "order-pay-success.html?version=2&uId=" 
+						window.location.href = "order-pay-success.html?version=3&uId=" 
 							+ uId + "&orderId=" + orderId +"&phone="+phone 
 							+ "&lat=" + getAttr(ID_TYPE,'lat')
 							+ "&lng=" + getAttr(ID_TYPE,'lng')
