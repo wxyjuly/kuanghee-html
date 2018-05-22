@@ -73,8 +73,6 @@
 		data["latitude"] = lat ;
 		data["from"] = from ;
 		
-		hiddenData(bId, bName) ;
-		
 		//ajax
 		$.post(url,data,function(data){
 			if(!isEmpty(data)
@@ -171,16 +169,6 @@
 			$(".other-container").show() ;
 			
 		}
-	}
-	
-	/**
-	 * 隐藏数据
-	 * @param param
-	 * @returns
-	 */
-	function hiddenData(bId, bName){
-		$(".other-container").hide() ;
-		$(".cater-container").hide() ;
 	}
 	
 	/**
