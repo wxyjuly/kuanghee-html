@@ -10,7 +10,7 @@
 	 */
 	function redirectToIndex() {
 		$(".to-index").click(function(){
-			window.location.href="search-list.html?version=3&uId="+getAttr(ID_TYPE,'uId') 
+			window.location.href="search-list.html?version=4&uId="+getAttr(ID_TYPE,'uId') 
 								+"&lat="+getAttr(ID_TYPE,'lat')
 								+"&lng="+getAttr(ID_TYPE,'lng');
 		}) ;

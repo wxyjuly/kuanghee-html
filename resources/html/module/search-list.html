@@ -12,14 +12,14 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 
-<link rel="stylesheet" href="../../css/common/bootstrap.min.css?version=3">
-<link rel="stylesheet" href="../../css/module/search-list.css?version=3">
+<link rel="stylesheet" href="../../css/common/bootstrap.min.css?version=4">
+<link rel="stylesheet" href="../../css/module/search-list.css?version=4">
 
-<script type="text/javascript" src="../../js/common/jquery-1.11.1.min.js?version=3"></script>
-<script type="text/javascript" src="../../js/common/jsrender.min.js?version=3"></script>
+<script type="text/javascript" src="../../js/common/jquery-1.11.1.min.js?version=4"></script>
+<script type="text/javascript" src="../../js/common/jsrender.min.js?version=4"></script>
 
-<script type="text/javascript" src="../../js/common/common.js?version=3"></script>
-<script type="text/javascript" src="../../js/module/search-list.js?version=3"></script>
+<script type="text/javascript" src="../../js/common/common.js?version=4"></script>
+<script type="text/javascript" src="../../js/module/search-list.js?version=4"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nYNDSvyQbYA0NyWtVjhoRnIGcXNSGzhd"></script>
 
 </head>
@@ -85,32 +85,38 @@
 	<br>
 	
 	<!-- search have result -->
-	<div class="container success-flag other-container" 
-		 style="display:none" id="search-success-errorcode-match-div">
+	<div class="container other-container" 
+		 style="display:none;" id="search-success-errorcode-match-div">
 	
 	</div>
 	
-	<div class="container success-flag cater-container" style="display:none">
-			<div class="cater-container-search-success-brand">卡特</div>
-			<div class="container-search-success-brand-line"></div>
-		  	<td class="mainTaskName_cell"/>
-			<a href="search-detail.html?articleId={{:articleId}}">
-				<div class="container-search-success-result-img-div">
-					<div class="row" >
-			            <div class="col-xs-4 border">
-							<img src="http://search.wajiyisheng.com/resources/img/common/tools.png" 
-								 style="width: 100%; height: 100%"/>
-			            </div>
-			            <div class="col-xs-8 border">
-			                <div class="row" id="cater-search-success-errorcode-match-div">
-							
-			                </div>
-			            </div>
-			        </div>
-				</div>
-			</a>
+	<div class="container cater-container" style="display:none;">
+		<div class="container-search-success-brand"></div>
+		<div class="container-search-success-brand-line"></div>
+  		<td class="mainTaskName_cell"></td>
+			<div class="container-search-success-result-img-div">
+			<div class="row" >
+	            <div class="col-xs-4 border">
+					<img src="http://search.wajiyisheng.com/resources/img/common/tools.png" style="width: 100%; height: 100%"/>
+	            </div>
+	            <div class="col-xs-8 border">
+	                <div class="row" id="cater-search-success-errorcode-match-div">
+	                
+	                    <div class="col-xs-12 padding-0-0 border">
+	                        <span class="result-title">【{{:errorCode}}】</span>
+	                    </div>
+	                    <div class="col-xs-12 padding-0-0 border">
+	                        <span class="result-desc">{{:title}}</span>
+	                    </div>
+	                    
+	                </div>
+	            </div>
+	        </div>
+		</div>
+					
 	</div>
-	<br>
+	<br/>	
+	<br/>
 	
 	<!-- search no result -->
 	<div class="container error-flag" style="display:none;">
@@ -192,20 +198,16 @@
 {{/for}}
 </script>
 
-
 <!-- cater brand-->
 <script id="cater-search-success-errorcode-match-js" type="text/x-jsrender">
-            <div class="col-xs-8 border">
-                <div class="row">
-                    <div class="col-xs-12 padding-0-0 border">
-                        <span class="result-title">【{{:errorCode}}】</span>
-                    </div>
-                    <div class="col-xs-12 padding-0-0 border">
-                        <span class="result-desc">{{:title}}</span>
-                    </div>
-                </div>
-            </div>
+	<div class="col-xs-12 padding-0-0 border">
+        <span class="result-title">【{{:errorCode}}】</span>
+    </div>
+    <div class="col-xs-12 padding-0-0 border">
+        <span class="result-desc">{{:title}}</span>
+    </div>
 </script>
+
 
 <script id="profession-div-content-script" type="text/x-jsrender">
 {{for}}

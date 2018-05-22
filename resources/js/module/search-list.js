@@ -73,10 +73,12 @@
 		data["latitude"] = lat ;
 		data["from"] = from ;
 		
+		hiddenData(bId, bName) ;
+		
 		//ajax
 		$.post(url,data,function(data){
 			if(!isEmpty(data)
-					&&('000000'==data.status||'0'==data.status) 
+					&&('000000'==data.status || '0'==data.status) 
 					&& !isEmpty(data.data)) { //成功，显示
 				var showErrorFlag = false ;
 				var beans = data.data.result ; 
@@ -89,7 +91,7 @@
 					var template = "" ;
 					if(bName=='卡特' || bId=='2'){
 						
-						showBrandSuccessDiv(bId, bName) ;// brand-data
+						showBrandSuccessDiv(bId, bName) ; // brand-data
 						
 						template = $.templates("#cater-search-success-errorcode-match-js");
 						htmlOutput = template.render(beans);
@@ -159,15 +161,26 @@
 	 * @returns
 	 */
 	function showBrandSuccessDiv(bId, bName){
+		
 		if("2"==bId || "卡特"==bName){
-			$(".cater-container").show() ;
 			$(".other-container").hide() ;
+			$(".cater-container").show() ;
 			
 		} else {
 			$(".cater-container").hide() ;
 			$(".other-container").show() ;
 			
 		}
+	}
+	
+	/**
+	 * 隐藏数据
+	 * @param param
+	 * @returns
+	 */
+	function hiddenData(bId, bName){
+		$(".other-container").hide() ;
+		$(".cater-container").hide() ;
 	}
 	
 	/**
@@ -245,14 +258,14 @@
 	 */
 	function redirectSearchIndex() {
 		$(".redirect-search-index").click(function(){
-			window.location.href="search-list.html?version=3&uId="+getAttr(ID_TYPE,'uId') 
+			window.location.href="search-list.html?version=4&uId="+getAttr(ID_TYPE,'uId') 
 									+ "&lat=" + getAttr(ID_TYPE,'lat')
 									+ "&lng=" + getAttr(ID_TYPE,'lng')
 									+ "&from=" + getAttr(ID_TYPE,'from') ;
 		}) ;
 		
 		$("#profession-list").click(function(){
-			window.location.href="profession-list.html?version=3&uId="+getAttr(ID_TYPE,'uId') 
+			window.location.href="profession-list.html?version=4&uId="+getAttr(ID_TYPE,'uId') 
 									+ "&lat=" + getAttr(ID_TYPE,'lat')
 									+ "&lng=" + getAttr(ID_TYPE,'lng')
 									+ "&from=" + getAttr(ID_TYPE,'from') ;
@@ -388,7 +401,7 @@
 					if (!isEmpty(beans)) {
 						var orderId = beans.id ;
 						var phone = beans.phone ;
-						window.location.href = "order-pay-success.html?version=3&uId=" 
+						window.location.href = "order-pay-success.html?version=4&uId=" 
 							+ uId + "&orderId=" + orderId +"&phone="+phone 
 							+ "&lat=" + getAttr(ID_TYPE,'lat')
 							+ "&lng=" + getAttr(ID_TYPE,'lng')
