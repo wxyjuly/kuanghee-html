@@ -1,5 +1,5 @@
-var baseProjectPath = "/kuangkee-search" ;
-//var baseProjectPath = "" ;
+//var baseProjectPath = "/kuangkee-search" ;
+var baseProjectPath = "" ;
 var IMG_PRE_URL = "http://search.wajiyisheng.com/resources" ;	
 
 
@@ -223,7 +223,7 @@ function checkIsLogin(userToken) {
  */
 function redirectSearchIndex() {
 	$(".redirect-search-index").click(function(){
-		window.location.href="search-list.html?version=4&uId="+getAttr(ID_TYPE,'uId')
+		window.location.href="search-list.html?version=5&uId="+getAttr(ID_TYPE,'uId')
 							+"&lat="+getAttr(ID_TYPE,'lat')
 							+"&lng="+getAttr(ID_TYPE,'lng');
 	}) ;

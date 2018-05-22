@@ -246,14 +246,14 @@
 	 */
 	function redirectSearchIndex() {
 		$(".redirect-search-index").click(function(){
-			window.location.href="search-list.html?version=4&uId="+getAttr(ID_TYPE,'uId') 
+			window.location.href="search-list.html?version=5&uId="+getAttr(ID_TYPE,'uId') 
 									+ "&lat=" + getAttr(ID_TYPE,'lat')
 									+ "&lng=" + getAttr(ID_TYPE,'lng')
 									+ "&from=" + getAttr(ID_TYPE,'from') ;
 		}) ;
 		
 		$("#profession-list").click(function(){
-			window.location.href="profession-list.html?version=4&uId="+getAttr(ID_TYPE,'uId') 
+			window.location.href="profession-list.html?version=5&uId="+getAttr(ID_TYPE,'uId') 
 									+ "&lat=" + getAttr(ID_TYPE,'lat')
 									+ "&lng=" + getAttr(ID_TYPE,'lng')
 									+ "&from=" + getAttr(ID_TYPE,'from') ;
@@ -389,7 +389,7 @@
 					if (!isEmpty(beans)) {
 						var orderId = beans.id ;
 						var phone = beans.phone ;
-						window.location.href = "order-pay-success.html?version=4&uId=" 
+						window.location.href = "order-pay-success.html?version=5&uId=" 
 							+ uId + "&orderId=" + orderId +"&phone="+phone 
 							+ "&lat=" + getAttr(ID_TYPE,'lat')
 							+ "&lng=" + getAttr(ID_TYPE,'lng')

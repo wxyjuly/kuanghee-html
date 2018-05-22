@@ -53,7 +53,7 @@
 		var lng = $('#lng').val();
 		var lat = $('#lat').val();
 		
-		location.href = "search-list.html?version=4&"
+		location.href = "search-list.html?version=5&"
 				+"uId="
 				+ uId
 				+"&key="
